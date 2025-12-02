@@ -3,64 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>Studenti KS</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load custom font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kedebideri:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind configuration for the footer design */
+        :root {
+            --footer-bg: #2D3139;
+            --main-text: #E5E7EB; /* gray-200 */
+            --accent-red: #E94D5A;
+        }
+
+        .kedebideri {
+            font-family: 'Kedebideri', sans-serif;
+        }
+
+        .icon-user {
+            margin-right: 0.5rem;
+        }
+        
+        /* Minimal custom styles for your original header/body elements */
+        .header__home {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header__home ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 15px;
+            font-size: 14px;
+        }
+        .header__home a {
+            text-decoration: none;
+            color: #333;
+        }
+        #hero {
+            text-align: center;
+            padding: 50px 0;
+            font-family: 'Kedebideri', sans-serif;
+            font-size: 40px;
+            color: #1f2937;
+        }
+        #button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #E94D5A;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        #div1, #div2, #div3 {
+            height: 50px;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            background-color: #f3f4f6;
+        }
+
+        @media (max-width: 768px) {
+            .header__home {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header__home ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col bg-gray-50">
     
-<header class="header__home" id="header">
-<a id="logo">
-    <img src="Studentikslogo.jpg" alt="Logo e Studentit ks">
-</a>
-<ul>
-<li>
-<a href="Universitetet/Universitetet.html">
-    <span>
-    Universitetet
-    </span>
-</a>
-</li>
-<li>
-<a href="Lajme/Lajme.html">
-</i> <span>Lajme te reja</span>
-</a>
-</li>
-<li>
-<a href="Bursat/Bursat.html">
-<i class="icon-user"></i> <span>Bursat</span>
-</a>
-    </li>
-	<li>
-<a href="banimi/Banimi.html" >
-    <i class="icon-play-button"></i> <span>Banimi</span>
-   	</a>
-	</li>
-<li>
-    <a href="tetjera/tetjera.html">
-        <span>Te tjera</span>
-    </a>
-</li>
-<li>
-    <a href="rrethnesh/Rrethnesh.html" >
-        <span>Rreth nesh</span>
-    </a>
-</li>
-</ul>
-</header>
-<h1 id="hero">MIRE SE VINI NE STUDENTI KS</h1>
-<button id="button"> MORE </button>  
-<div id="div1"></div>
-<div id="div2"></div>
-<div id="div3"></div>
+    <!-- HEADER (Original structure preserved) -->
+    <header class="header__home" id="header">
+        <a id="logo">
+            <img src="https://placehold.co/150x40/2D3139/E5E7EB?text=Studenti+KS" alt="Logo e Studentit ks">
+        </a>
+        <ul>
+            <li>
+                <a href="Universitetet/Universitetet.html">
+                    <span>Universitetet</span>
+                </a>
+            </li>
+            <li>
+                <a href="Lajme/Lajme.html">
+                    <i class="icon-user"></i> <span>Lajme te reja</span>
+                </a>
+            </li>
+            <li>
+                <a href="Bursat/Bursat.html">
+                    <i class="icon-user"></i> <span>Bursat</span>
+                </a>
+            </li>
+            <li>
+                <a href="banimi/Banimi.html" >
+                    <i class="icon-play-button"></i> <span>Banimi</span>
+                </a>
+            </li>
+            <li>
+                <a href="tetjera/tetjera.html">
+                    <span>Te tjera</span>
+                </a>
+            </li>
+            <li>
+                <a href="rrethnesh/Rrethnesh.html" >
+                    <span>Rreth nesh</span>
+                </a>
+            </li>
+        </ul>
+    </header>
 
-</body>     
+    <!-- MAIN CONTENT (Original structure preserved) -->
+    <main class="flex-grow">
+        <h1 id="hero">MIRE SE VINI NE STUDENTI KS</h1>
+        <button id="button"> MORE </button>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </main>
+
+    <footer id="footer" class="bg-[--footer-bg] text-[--main-text] py-12 px-6 lg:px-20 font-sans">
+        
+        <!-- Top section -->
+        <div class="lg:flex lg:justify-between border-b border-gray-700 pb-8 mb-8">
+            
+            <!-- Left side: Apply & Address -->
+            <div class="lg:w-1/3 space-y-8 mb-8 lg:mb-0">
+                
+                <!-- Apply Online Button -->
+                <div class="flex items-center justify-start">
+                    <a href="#" class="flex items-center w-full max-w-xs bg-[--accent-red] text-white font-bold py-3 px-6 rounded-l-lg shadow-lg hover:bg-red-600 transition duration-300 text-sm">
+                        APPLY ONLINE
+                    </a>
+                    <div class="bg-white w-10 h-[3.125rem] flex items-center justify-center rounded-r-lg">
+                        <svg class="w-5 h-5 text-[--accent-red]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-sm tracking-widest text-gray-300">ADDRESS</h3>
+                    <p class="text-sm">
+                        Rr. Elez Berisha, Nr. 56 Zona Industriale Fushë Kosovë<br>
+                        10000 Prishtinë, Republika e Kosovës
+                    </p>
+                    <div class="text-[--accent-red] font-semibold text-sm cursor-pointer hover:underline inline-block">DIRECTIONS</div>
+                </div>
+            </div>
+
+            <!-- Middle & Right Columns -->
+            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 lg:pt-0">
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold text-sm tracking-widest text-gray-300 mb-4">CONTACT</h3>
+                    <p class="text-sm leading-relaxed">
+                        Info@aab-edu.net<br>
+                        +383 (0) 48 999 003 viber & whatsapp<br>
+                        +383 (0) 45 284 797
+                    </p>
+                </div>
+
+                <!-- Kontaktet Emergjente -->
+                <div>
+                    <h3 class="font-bold text-sm tracking-widest text-gray-300 mb-4">KONTAKTET EMERGJENTE</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Policia - 192</li>
+                        <li>Zjarrëfikësit - 193</li>
+                        <li>Ndihma e shpejtë - 194</li>
+                        <li>Kërkim - shpëtim malor - 049 840 228</li>
+                        <li>Qendra e thirrjeve emergjente - 112</li>
+                        <li>Dhuna në familje - 0800 1112</li>
+                        <li>Mbështetja ndaj viktimave - 038 550 999</li>
+                        <li>Agjensia kundër korrupsionit - 0800 10800</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="border-b border-gray-700 pb-8 mb-8">
+            <h3 class="font-bold text-sm tracking-widest text-gray-300 mb-4">LINKS</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3 text-sm">
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Home</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Faculties</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Research</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">About AAB</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Alumni</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Schedule</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">News</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Current Students</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Exams</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Conferences</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">International Cooperations</a>
+                <a href="#" class="hover:text-[--accent-red] transition duration-150">Privacy Policy</a>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-[--accent-red] flex items-center justify-center rounded-lg mr-3">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                </div>
+                <span class="text-xl font-bold tracking-wider">Kolegji AAB</span>
+            </div>
+
+            <!-- Email Input -->
+            <div class="flex w-full max-w-sm lg:w-auto">
+                <input type="email" placeholder="Your E-mail Here" class="flex-grow bg-transparent border border-gray-600 text-sm p-3 focus:outline-none focus:ring-1 focus:ring-[--accent-red] placeholder-gray-400">
+                <button class="bg-[--accent-red] text-white p-3 hover:bg-red-600 transition duration-300 rounded-r-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </div>
+
+            <!-- Language & Social -->
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-2 text-sm">
+                    <span class="font-bold hidden sm:inline">LANGUAGE</span>
+                    <span class="font-bold sm:hidden">LANG</span>
+                    <span class="text-gray-400">|</span>
+                    <a href="#" class="hover:text-[--accent-red] font-semibold">SQ</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="#" class="hover:text-[--accent-red] font-semibold">ENG</a>
+                </div>
+
+                <div class="flex space-x-3">
+                    <a href="#" class="text-gray-300 hover:text-[--accent-red] transition duration-150">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.51 2.04 2 6.53 2 12.04c0 4.84 3.44 8.87 8 9.8V15.5h-2.26V12h2.26v-1.92c0-2.24 1.34-3.48 3.37-3.48 0.96 0 1.96.17 1.96.17v2.18h-1.1c-1.09 0-1.42.68-1.42 1.39V12h2.55l-.41 3.5h-2.14v6.34c4.56-.93 8-4.96 8-9.8C22 6.53 17.49 2.04 12 2.04z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[--accent-red] transition duration-150">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.852.07c1.32.06 2.09.277 2.65.5A4.14 4.14 0 0121.5 5.5c.223.56.438 1.33.498 2.65.058 1.268.07 1.648.07 4.852s-.012 3.584-.07 4.852c-.06 1.32-.277 2.09-.5 2.65a4.14 4.14 0 01-2.337 2.337c-.56.223-1.33.438-2.65.498-1.268.058-1.648.07-4.852.07s-3.584-.012-4.852-.07c-1.32-.06-2.09-.277-2.65-.5a4.14 4.14 0 01-2.337-2.337c-.223-.56-.438-1.33-.498-2.65-.058-1.268-.07-1.648-.07-4.852s.012-3.584.07-4.852c.06-1.32.277-2.09.5-2.65a4.14 4.14 0 012.337-2.337c.56-.223 1.33-.438 2.65-.498 1.268-.058 1.648-.07 4.852-.07zm0 1.85a9.88 9.88 0 100 19.76 9.88 9.88 0 000-19.76zm0 3.79a6.09 6.09 0 110 12.18 6.09 6.09 0 010-12.18zm0 2.21a3.88 3.88 0 100 7.76 3.88 3.88 0 000-7.76zM18.15 7.15a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-[--accent-red] transition duration-150">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.694c0-1.339-.234-2.385-1.458-2.385-1.077 0-1.294.789-1.294 2.385v5.694h-3.556v-9.356h3.407v1.539h.056c.474-.75 1.625-1.539 3.39-1.539 3.626 0 4.288 2.37 4.288 6.883v5.473zM7.412 10.158A1.914 1.914 0 015.5 8.244c0-1.042.846-1.887 1.912-1.887s1.912.845 1.912 1.887c0 1.04-.846 1.885-1.912 1.885zm1.782 10.294h-3.555v-9.356h3.555v9.356zM2.5 22h19c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1H2c-.55 0-1 .45-1 1v18c0 .55.45 1 1 1z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>     
 </html>
-
-
-
-
-
-

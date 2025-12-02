@@ -1,115 +1,77 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: "Kedebideri", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
+:root {
+            --footer-bg: #2D3139;
+            --main-text: #E5E7EB; /* gray-200 */
+            --accent-red: #E94D5A;
+        }
 
-body{
-    background-image: url(blurred-background-vibrant-campus-scene-600nw-2527446029.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    justify-content: space-evenly;
-}
+        .kedebideri {
+            font-family: 'Kedebideri', sans-serif;
+        }
 
-#div1{
-    background-image: url(image.png);
-    width: 400px;
-    height: 400px;
-    position: relative;
-    top: 550px;
-    display: flexbox;
-    border-radius: 50%;
-    justify-content: space-around;
-    background-position: center;
-}
+        .icon-user {
+            margin-right: 0.5rem;
+        }
+        
+        /* Minimal custom styles for your original header/body elements */
+        .header__home {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header__home ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 15px;
+            font-size: 14px;
+        }
+        .header__home a {
+            text-decoration: none;
+            color: #333;
+        }
+        #hero {
+            text-align: center;
+            padding: 50px 0;
+            font-family: 'Kedebideri', sans-serif;
+            font-size: 40px;
+            color: #1f2937;
+        }
+        #button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #E94D5A;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        #div1, #div2, #div3 {
+            height: 50px;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            background-color: #121212;
+        }
 
-#div2{
-    background-image: url(image2.png);
-    width: 400px;
-    height: 400px;
-    position: relative;
-    top: 140px;
-    left: 550px;
-    justify-content: space-evenly;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 50%;
-    background-position: center;
-}
+        @media (max-width: 768px) {
+            .header__home {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header__home ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
 
-#div3{
-   background-image: url(image3.png);
-    width: 400px;
-    height: 400px;
-    float: right;
-    clear: right;
-    position: relative;
-    bottom: 250px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 50%;
-    background-position: center; 
-}
-
-#logo , img{
-box-sizing: border-box;
-width: fit-content;
-height:70px;
-position: relative;
-right: 130px;
-}
-
-#header{
-    width: 100%;
-    background-color: #121212;
-    height: 70px;
-    display: flex;
-}
-
-#header,ul{
-    display: flex;
-    gap: 4em;
-    text-transform: uppercase;
-}
-
-#header,ul,li{
-    display: flex;
-    gap: 4em;
-    justify-content: center;
-    font-size: 1.1rem;
-}
-
-#ul,li{
-    position: relative;
-    top: 20px;
-}
-
-#button{
-    background-color:#121212;
-    width: 250px;
-    border-radius: 20px;
-    border-color: white;
-    box-shadow:  0px 11px 10px 0px olive;
-    height: 50px;
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-    position: relative;
-    top: 200px;
-    left: 650px;
-}
-
-#hero{
-font-size: 3rem;
-text-align: center;
-position: relative;
-top: 100px;
-}
+        body{
+            margin: 0;
+            padding:0;
+        }

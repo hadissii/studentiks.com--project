@@ -1,6 +1,6 @@
 :root {
             --footer-bg: #2D3139;
-            --main-text: #E5E7EB; /* gray-200 */
+            --main-text: #E5E7EB; 
             --accent-red: #E94D5A;
         }
 
@@ -12,7 +12,6 @@
             margin-right: 0.5rem;
         }
         
-        /* Minimal custom styles for your original header/body elements */
         .header__home {
             padding: 10px 20px;
             display: flex;
@@ -57,7 +56,7 @@
             max-width: 400px;
             margin: 10px auto;
             border: 1px solid #ccc;
-            background-color: #121212;
+            background-color: #f3f4f6;
         }
 
         @media (max-width: 768px) {
@@ -69,9 +68,4 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-        }
-
-        body{
-            margin: 0;
-            padding:0;
         }

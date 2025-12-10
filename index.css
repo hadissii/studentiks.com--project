@@ -12,6 +12,14 @@ html, body {
   flex-direction: column;
 }
 
+body{
+  background-image: url(blurred-background-vibrant-campus-scene-600nw-2527446029.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+}
+
 body.light {
   color: #333;
 }

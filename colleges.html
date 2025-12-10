@@ -1,367 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduKosovo – Colleges & Universities in Kosovo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="colleges.css" />
-  
-  <style>
-    /* --- Navbar Specific CSS --- */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    /* Left side: Logo + Links */
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #7b68ee; /* Purple */
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-    .logo span {
-      color: #e91e63; /* Pink */
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: #e91e63;
-    }
-
-    /* Right side: Buttons */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 10px 25px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-login {
-      background-color: #6a7bf5;
-      color: white;
-    }
-
-    .btn-register {
-      background-color: #e91e63;
-      color: white;
-    }
-
-    .btn-darkmode {
-      background-color: white;
-      color: black;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    body.dark-mode-active {
-      background-color: #1a1a1a;
-      color: white;
-    }
-    body.dark-mode-active .navbar {
-      background-color: #222;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
-    }
-    body.dark-mode-active .nav-links li a {
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakultetist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light">
-
-<nav>
-  <div class="nav-container">
-
-    <div class="logo">RoomieFind</div>
-
-    <!-- Desktop nav -->
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="colleges.html">Colleges</a>
+    <!-- NAVBAR -->
+    <nav class="nav-container">
+        <!-- Brand/Logo -->
+        <div class="brand">Fakultetist</div>
+        
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">AboutUs</a>
+            <a href="contact.html">ContactUs</a>
+            <a href="colleges.html">Fakultetet</a>
+        </div>
+        
+        <!-- Desktop Auth Buttons & Theme Toggle -->
+        <div class="auth-buttons">
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Create Your Account</button>
+            
+            <!-- Theme Toggle -->
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        
+        <!-- Hamburger Menu (Mobile Only) -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#home">Home</a>
+            <a href="#about">AboutUs</a>
+            <a href="#contact">ContactUs</a>
+        </div>
+        <div class="mobile-auth-buttons">
+            <button id="mobile-login-btn">Login</button>
+            <button id="mobile-register-btn">Create Your Account</button>
+        </div>
     </div>
-
-    <div class="auth-buttons">
-      <button href="login.html" id="loginBtn">Login</button>
-      <button href="register.html" id="register-btn">Register</button>
-      <button id="themeToggle">Dark Mode</button>
-    </div>
-
-    <!-- Hamburger (only ONE!) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="colleges.html">Colleges</a>
-  </div>
-
-   <div class="mobile-auth-buttons">
-    <button id="loginBtnMobile">Login</button>
-    <button id="registerBtnMobile">Register</button>
-  </div>
-</div>
-
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="colleges.html">Colleges</a>
-  </div>
-
-  <div class="mobile-auth-buttons">
-<a href="login.html" class="login-mobile">Login</a>
-    <a href="register.html" class="register-mobile">Register</a>  </div>
-</div>
-
-  <h1 id="Colleges">Colleges</h1>
-  
-  <div class="card-grid">
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>University of Prishtina “Hasan Prishtina”</h3>
-        <p>Public University • Prishtina</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Established:</strong> 1969<br>
-          <strong>Students:</strong> ~23,000+<br>
-          <strong>Website:</strong>
-          <a href="https://uni-pr.edu/" target="_blank">uni-pr.edu</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>University for Business & Technology (UBT)</h3>
-        <p>Private University • Prishtina, Ferizaj, Prizren</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Founded:</strong> 2001<br>
-          <strong>Focus:</strong> Business, Engineering, Law, Life Sciences<br>
-          <strong>Contact:</strong> +383 38 541 400<br>
-          <strong>Email:</strong> info@ubt-uni.net<br>
-          <strong>Website:</strong>
-          <a href="https://www.ubt-uni.net/" target="_blank">ubt-uni.net</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>AAB College</h3>
-        <p>Private College • Prishtina, Gjakova, Ferizaj</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Established:</strong> 2000<br>
-          <strong>Programs:</strong> Economics, Law, Computer Science, Arts, Health Sciences<br>
-          <strong>Website:</strong>
-          <a href="https://aab-edu.net/" target="_blank">aab-edu.net</a><br>
-          <strong>Address:</strong> Rr. Elez Berisha, nr. 56, Prishtina
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>Haxhi Zeka University</h3>
-        <p>Public University • Peja</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Students:</strong> ~10,000<br>
-          <strong>Website:</strong>
-          <a href="https://www.unhz.eu/" target="_blank">unhz.eu</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>University of Mitrovica “Isa Boletini”</h3>
-        <p>Public University • Mitrovica</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Founded:</strong> 2013<br>
-          <strong>Motto:</strong> “A Safe Future”<br>
-          <strong>Website:</strong>
-          <a href="http://umib.net/" target="_blank">umib.net</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>University of Applied Sciences Ferizaj</h3>
-        <p>Public • Ferizaj</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Students:</strong> ~1,500<br>
-          <strong>Website:</strong>
-          <a href="https://ushaf.net/" target="_blank">ushaf.net</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>Kadri Zeka University</h3>
-        <p>Public University • Gjilan</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Website:</strong>
-          <a href="https://uni-gjilan.net/" target="_blank">uni-gjilan.net</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>University of Gjakova “Fehmi Agani”</h3>
-        <p>Public University • Gjakova</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Website:</strong>
-          <a href="https://uni-gjk.org/" target="_blank">uni-gjk.org</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>RIT Kosovo (A.U.K.)</h3>
-        <p>Private • Prishtina</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Type:</strong> American Accredited University<br>
-          <strong>Website:</strong>
-          <a href="https://www.rit.edu/kosovo/" target="_blank">rit.edu/kosovo</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>Universum College</h3>
-        <p>Private College • Kosovo</p>
-      </div>
-      <div class="flip-card-back">
-        <p>
-          <strong>Programs:</strong> Business, IT, Law, Health Sciences<br>
-          <strong>Website:</strong>
-          <a href="https://www.universum-ks.org/" target="_blank">universum-ks.org</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-  <script src="script.js"></script>
-  <script>
-    // Simple Dark Mode Toggle Logic
-    const toggleBtn = document.getElementById('darkModeBtn');
-    const body = document.body;
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode-active');
-      
-      if (body.classList.contains('dark-mode-active')) {
-        toggleBtn.textContent = "Light Mode";
-      } else {
-        toggleBtn.textContent = "Dark Mode";
-      }
-    });
-  </script>
+    
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Your page content here -->
+    </main>
+    
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.remove('light');
+            body.classList.add('dark');
+            themeToggle.checked = true;
+        }
+        
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

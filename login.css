@@ -96,7 +96,7 @@ body.dark .nav-links a {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #2652c0;
 }
 
 body.dark .nav-links a:hover {
@@ -111,7 +111,7 @@ body.dark .nav-links a:hover {
   left: 0;
   width: 0;
   height: 3px;
-  background: #667eea;
+  background: #2652c0;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -141,8 +141,8 @@ body.dark .nav-links a:hover {
 
 #login-btn {
   background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #2652c0;
+  border: 2px solid #2652c0;
 }
 
 body.dark #login-btn {
@@ -151,19 +151,19 @@ body.dark #login-btn {
 }
 
 #login-btn:hover {
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(38, 82, 192, 0.1);
   transform: translateY(-2px);
 }
 
 #register-btn {
- background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(38, 82, 192, 0.3);
 }
 
 #register-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 16px rgba(38, 82, 192, 0.4);
 }
 
 /* Theme Toggle Switch */
@@ -183,7 +183,7 @@ body.dark #login-btn {
 }
 
 .slider {
-  --background: #667eea;
+  --background: #2652c0;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -236,7 +236,7 @@ input:checked + .slider:before {
   display: block;
   height: 4px;
   width: 100%;
-  background-color: #667eea;
+  background-color: #2652c0;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -306,7 +306,7 @@ body.dark .mobile-menu-links a {
 }
 
 .mobile-menu-links a:hover {
-  color: #667eea;
+  color: #2652c0;
 }
 
 .mobile-auth-buttons {
@@ -328,12 +328,12 @@ body.dark .mobile-menu-links a {
 
 #mobile-login-btn {
   background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #2652c0;
+  border: 2px solid #2652c0;
 }
 
 #mobile-register-btn {
- background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
 }
 
@@ -348,7 +348,7 @@ body.dark .mobile-menu-links a {
 .login-section h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -390,10 +390,27 @@ body.dark .login-form-container {
   border: 1px solid #444;
 }
 
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+body.dark .form-group label {
+  color: #cbd5e0;
+}
+
 .login-form-container input {
   width: 100%;
   padding: 15px;
-  margin: 12px 0;
+  margin: 5px 0 0 0;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
@@ -415,15 +432,15 @@ body.dark .login-form-container input {
 
 .login-form-container input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  border-color: #2652c0;
+  box-shadow: 0 0 0 3px rgba(38, 82, 192, 0.2);
   transform: translateY(-1px);
 }
 
 .login-submit-btn {
   width: 100%;
   padding: 16px;
-background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   border: none;
   border-radius: 10px;
@@ -436,7 +453,7 @@ background: linear-gradient(135deg, #2652c0, #1ee9c0);
 
 .login-submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(38, 82, 192, 0.4);
 }
 
 /* Form footer text */
@@ -452,7 +469,7 @@ body.dark .login-form-container p {
 }
 
 .login-form-container a {
-  color: #667eea;
+  color: #2652c0;
   text-decoration: none;
   font-weight: 600;
 }
@@ -481,8 +498,13 @@ body.dark .remember-me {
   color: #bbb;
 }
 
+.remember-me input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
 .forgot-password {
-  color: #667eea;
+  color: #2652c0;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -504,7 +526,7 @@ body.dark .register-link-container {
 }
 
 .register-link {
-  color: #667eea;
+  color: #2652c0;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
@@ -512,7 +534,7 @@ body.dark .register-link-container {
 }
 
 .register-link:hover {
-  color: #764ba2;
+  color: #1ee9c0;
   text-decoration: underline;
 }
 
@@ -522,7 +544,7 @@ footer {
   width: 100%;
   padding: 30px 20px;
   text-align: center;
- background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   font-size: 1.05rem;
   font-weight: 500;
@@ -616,5 +638,19 @@ footer {
   
   .login-form-container {
     padding: 25px 20px;
+  }
+  
+  .form-group label {
+    font-size: 13px;
+  }
+  
+  .login-form-container input {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .login-submit-btn {
+    padding: 14px;
+    font-size: 1rem;
   }
 }

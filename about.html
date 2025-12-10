@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Page Title</title>
+  <title>About Us – RoomieFind</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="about.css" href="colleges.css" />
 </head>
 <body class="light">
-  <!-- Navbar Container -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+  <!-- Navbar -->
+  <nav>
   <div class="nav-container">
-    <!-- Logo -->
-    <img class="logo" src="fotot/LogoStudentiks_pabg.png" alt="Logo">
-    
-    <!-- Desktop Navigation Links -->
+
+   <img class="logo" src="fotot/LogoStudentiks_pabg.png" alt="">
+
+    <!-- Desktop nav -->
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
@@ -21,128 +27,109 @@
       <a href="colleges.html">Fakultetet</a>
     </div>
 
-    <!-- Auth Buttons and Theme Toggle -->
     <div class="auth-buttons">
-      <button id="login-btn" class="login-btn">Login</button>
-      <button id="register-btn" class="register-btn">Register</button>
-
-      <!-- Theme Toggle Switch -->
-      <label class="switch">
-        <input type="checkbox" id="themeToggle">
-        <span class="slider"></span>
-      </label>
-      
-      <!-- Hamburger Menu Button (Mobile Only) -->
-      <button id="hamburger" class="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button href="login.html" id="loginBtn">Login</button>
+      <button href="register.html" id="register-btn">Register</button>
+       <label class="switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider"></span>
     </div>
+
+    <!-- Hamburger (only ONE!) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="colleges.html">Colleges</a>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div id="mobileMenu" class="mobile-menu">
-    <div class="mobile-menu-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="colleges.html">Fakultetet</a>
-    </div>
-
-    <div class="mobile-auth-buttons">
-      <button id="mobile-login-btn">Login</button>
-      <button id="mobile-register-btn">Register</button>
-    </div>
+   <div class="mobile-auth-buttons">
+    <button id="loginBtnMobile">Login</button>
+    <button id="registerBtnMobile">Register</button>
   </div>
+</div>
 
-  <!-- Your main content here -->
+
+  <!-- Main Content (grows to push footer down) -->
   <main>
-    <section>
-      <h1>Your Page Title</h1>
-      <!-- Your content goes here -->
+    <section class="ateksti">
+      <h1>Rreth Studenti-ks </h1>
+<section class="about-section">
+ 
+  <div class="about-card">
+    <img src="fotot/8c85a962-50e8-4b36-8f92-61ab49afd5a5.jpg" alt="Ekipi jonë">
+    <h3>Ne jemi tre studentë nga UBT: <strong>Hadis Sylka</strong>, <strong>Leart Shulina</strong> dhe <strong>Albert Vuqiterna</strong>. Punojmë si ekip për të ndërtuar projekte praktike dhe të përdorshme për studentët në Kosovë.
+    Qëllimi ynë është të krijojmë një platformë që u ndihmon studentëve me informata, mjete dhe përmbajtje të dobishme gjatë studimeve. Çdo pjesë e projektit ndërtohet me kujdes dhe bashkëpunim nga ne të tre.</h3>
+    <p><strong>studentin-ks – praktik, i qartë, për studentë.</strong></p>
+  </div>
+</section>
+
+
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer – Always at the bottom -->
   <footer>
-    © 2025 Your Website Name – All rights reserved
+    <div class="footer-content">
+      © 2025 RoomieFind – Thinking for the future
+    </div>
   </footer>
 
-  <!-- JavaScript -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Theme Toggle Script -->
   <script>
-    // Theme Toggle Functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      document.body.classList.toggle("light");
+      const isDark = document.body.classList.contains("dark");
+      document.getElementById("themeToggle").textContent = isDark ? "Light Mode" : "Dark Mode";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
 
-    // Check saved theme or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.classList.add(savedTheme);
-    themeToggle.checked = savedTheme === 'dark';
-
-    themeToggle.addEventListener('change', () => {
-      if (themeToggle.checked) {
-        body.classList.remove('light');
-        body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        body.classList.remove('dark');
-        body.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
-    // Mobile Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-      if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      }
-    });
-
-    // Close mobile menu when clicking links
-    document.querySelectorAll('.mobile-menu-links a, .mobile-auth-buttons button').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Set active nav link
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu-links a');
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.style.color = '#667eea';
-        link.style.fontWeight = '600';
-      }
-    });
-
-    // Login and Register button functionality
-    document.getElementById('login-btn').addEventListener('click', () => {
-      window.location.href = 'login.html';
-    });
-
-    document.getElementById('register-btn').addEventListener('click', () => {
-      window.location.href = 'register.html';
-    });
-
-    document.getElementById('mobile-login-btn').addEventListener('click', () => {
-      window.location.href = 'login.html';
-    });
-
-    document.getElementById('mobile-register-btn').addEventListener('click', () => {
-      window.location.href = 'register.html';
-    });
+    // Load saved theme on page load
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+      document.getElementById("themeToggle").textContent = "Light Mode";
+    }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

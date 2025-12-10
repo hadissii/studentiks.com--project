@@ -84,13 +84,7 @@ nav{
 
 /* Logo */
 .logo {
-  font-size: 2.3rem;
-  font-weight: 800;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  
 }
 
 /* Hamburger Menu Button */

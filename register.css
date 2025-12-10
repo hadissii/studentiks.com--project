@@ -19,6 +19,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
@@ -58,7 +59,6 @@ nav {
   padding: 1rem 0;
   z-index: 1000;
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 0.4s ease;
 }
 
@@ -84,19 +84,17 @@ nav{
 
 /* Logo */
 .logo {
-  font-size: 2.3rem;
-  font-weight: 800;
   background: linear-gradient(135deg, #1e13c0, #1ee99b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin: 0;
+  padding: 0;
+  height: 100px;
 }
 
 /* Hamburger Menu Button */
 .hamburger {
   width: 35px;       /* Width of the icon */
   height: 30px;      /* Height of the icon */
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between; /* space between lines */
   cursor: pointer;
@@ -214,12 +212,12 @@ body.light .mobile-menu {
 }
 
 #loginBtn{ 
-  background: #667eea;
+  background: linear-gradient(135deg, #1e13c0, #1ee99b);
   color: white; 
 }
 
 #registerBtn{ 
-  background: #e91e63;
+  background: linear-gradient(135deg, #1e13c0, #1ee99b);
   color: white; 
 }
 

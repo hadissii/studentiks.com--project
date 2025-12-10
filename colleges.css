@@ -321,6 +321,7 @@ body.dark .mobile-menu-links a {
   }
 }
 
+/* ============== RESPONSIVE ============== */
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 20px;

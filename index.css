@@ -90,7 +90,11 @@ body.dark .nav-links a {
 }
 
 .nav-links a:hover {
+<<<<<<< Updated upstream
   color: #2652c0;
+=======
+  color: #2652c0; /* Using the gradient color as solid on hover */
+>>>>>>> Stashed changes
 }
 
 body.dark .nav-links a:hover {
@@ -155,7 +159,11 @@ body.dark #login-btn {
 }
 
 #register-btn {
+<<<<<<< Updated upstream
   background: linear-gradient(to right, #2652c0, #1ee9c0);
+=======
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+>>>>>>> Stashed changes
   color: white;
   box-shadow: 0 4px 12px rgba(38, 82, 192, 0.3);
 }
@@ -611,7 +619,11 @@ main.hero {
   width: 100%;
 }
 
+<<<<<<< Updated upstream
 /* ==================== 7. Responsive Design ==================== */
+=======
+/* ==================== 7. Responsive ==================== */
+>>>>>>> Stashed changes
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 30px;
@@ -629,10 +641,13 @@ main.hero {
     padding: 8px 20px;
     font-size: 15px;
   }
+<<<<<<< Updated upstream
   
   .hero-content h1 {
     font-size: 3rem;
   }
+=======
+>>>>>>> Stashed changes
 }
 
 @media (max-width: 768px) {
@@ -650,6 +665,7 @@ main.hero {
     display: flex;
   }
   
+<<<<<<< Updated upstream
   .brand {
     margin-right: auto;
     font-size: 22px;
@@ -661,6 +677,11 @@ main.hero {
   
   .hero-content p {
     font-size: 1.1rem;
+=======
+  .logo {
+    height: 50px;
+    margin-right: auto;
+>>>>>>> Stashed changes
   }
   
   .footer-content {
@@ -693,6 +714,7 @@ main.hero {
     font-size: 16px;
   }
   
+<<<<<<< Updated upstream
   .hero-content h1 {
     font-size: 2.2rem;
   }
@@ -702,6 +724,8 @@ main.hero {
     padding: 0 10px;
   }
   
+=======
+>>>>>>> Stashed changes
   footer {
     padding: 30px 15px 15px;
   }

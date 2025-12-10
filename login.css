@@ -456,6 +456,30 @@ body.dark .login-form-container input {
   box-shadow: 0 10px 25px rgba(38, 82, 192, 0.4);
 }
 
+.login-submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.login-submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* Form footer text */
 .login-form-container p {
   text-align: center;
@@ -653,4 +677,35 @@ footer {
     padding: 14px;
     font-size: 1rem;
   }
+<<<<<<< Updated upstream
+=======
+}
+
+/* ==================== 6. Additional Styles ==================== */
+/* Error message styling */
+.error-message {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Success message */
+.success-message {
+  background: #c6f6d5;
+  color: #22543d;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+body.dark .success-message {
+  background: #22543d;
+  color: #c6f6d5;
+>>>>>>> Stashed changes
 }

@@ -1,4 +1,10 @@
+/* ============================================================= */
+/*  ROOMIEFIND – Modern Apartment & Roommate Finder               
+/*  FINAL PROFESSIONAL CSS – Perfectly Organized & Clean         
+/*  Sticky Footer | Light/Dark Mode | Mobile Ready | HAMBURGER MENU
+/* ============================================================= */
 
+/* ==================== 1. Core Reset & Layout ==================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -80,7 +86,7 @@ nav{
 .logo {
   font-size: 2.3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: linear-gradient(135deg, #1e13c0, #1ee99b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -90,7 +96,7 @@ nav{
 .hamburger {
   width: 35px;       /* Width of the icon */
   height: 30px;      /* Height of the icon */
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between; /* space between lines */
   cursor: pointer;
@@ -100,7 +106,7 @@ nav{
   display: block;
   height: 4px;       /* Thickness of the lines */
   width: 100%;
-  background: linear-gradient(135deg, #2652c0, #1ee9c0); /* Line color */
+  background-color: #4a5bf5; /* Line color */
   border-radius: 2px;        /* Rounded edges */
   transition: all 0.3s ease; /* Smooth animation */
 }
@@ -205,22 +211,21 @@ body.light .mobile-menu {
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
 }
 
 #loginBtn{ 
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: #667eea;
   color: white; 
 }
 
 #registerBtn{ 
- background: linear-gradient(135deg, #2652c0, #1ee9c0);
+  background: #e91e63;
   color: white; 
 }
 
 #themeToggle{ 
   background: none;
-  border: black;
+  border: transparent;
   box-shadow: none;
   font-size: 1.9rem;
   padding: 0.4rem;
@@ -244,13 +249,15 @@ section {
 }
 
 #register-btn{
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+   background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
 }
 
 h1 {
   font-size: 3.9rem;
   font-weight: 800;
- background: linear-gradient(135deg, #2652c0, #1ee9c0);
+   background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -321,7 +328,8 @@ body.dark .flip-card-front{
 }
 
 .flip-card-back {
-background: linear-gradient(135deg, #2652c0, #1ee9c0);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   transform: rotateY(180deg);
 }
@@ -385,7 +393,8 @@ input:focus, textarea:focus {
 .submit-btn {
   width: 100%;
   padding: 1.4rem;
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+   background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   border: none;
   border-radius: 14px;
@@ -407,7 +416,8 @@ footer {
   width: 100%;
   padding: 3.5rem 1rem;
   text-align: center;
-  background: linear-gradient(135deg, #2652c0, #1ee9c0);
+   background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   font-size: 1.05rem;
   font-weight: 500;

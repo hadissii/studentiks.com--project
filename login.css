@@ -86,7 +86,8 @@ nav{
 .logo {
   font-size: 2.3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -106,7 +107,8 @@ nav{
   display: block;
   height: 4px;       /* Thickness of the lines */
   width: 100%;
-  background-color: #4a5bf5; /* Line color */
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+ /* Line color */
   border-radius: 2px;        /* Rounded edges */
   transition: all 0.3s ease; /* Smooth animation */
 }
@@ -213,12 +215,14 @@ body.light .mobile-menu {
 }
 
 #loginBtn{ 
-  background: #667eea;
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white; 
 }
 
 #registerBtn{ 
-  background: #e91e63;
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white; 
 }
 
@@ -248,13 +252,15 @@ section {
 }
 
 #register-btn{
-  background: linear-gradient(135deg, #667eea, #e91e63);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
 }
 
 h1 {
   font-size: 3.9rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -325,7 +331,8 @@ body.dark .flip-card-front{
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   transform: rotateY(180deg);
 }
@@ -389,7 +396,8 @@ input:focus, textarea:focus {
 .submit-btn {
   width: 100%;
   padding: 1.4rem;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   border: none;
   border-radius: 14px;
@@ -411,7 +419,8 @@ footer {
   width: 100%;
   padding: 3.5rem 1rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e13c0, #1ee99b);
+
   color: white;
   font-size: 1.05rem;
   font-weight: 500;

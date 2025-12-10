@@ -1,10 +1,4 @@
-/* ============================================================= */
-/*  ROOMIEFIND – Modern Apartment & Roommate Finder               
-/*  FINAL PROFESSIONAL CSS – Perfectly Organized & Clean         
-/*  Sticky Footer | Light/Dark Mode | Mobile Ready | HAMBURGER MENU
-/* ============================================================= */
 
-/* ==================== 1. Core Reset & Layout ==================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: background 0.4s ease, color 0.4s ease;
+  
 }
 
 body.light { 
@@ -86,8 +81,7 @@ nav{
 .logo {
   font-size: 2.3rem;
   font-weight: 800;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #e91e63);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,8 +101,7 @@ nav{
   display: block;
   height: 4px;       /* Thickness of the lines */
   width: 100%;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
- /* Line color */
+  background-color: #4a5bf5; /* Line color */
   border-radius: 2px;        /* Rounded edges */
   transition: all 0.3s ease; /* Smooth animation */
 }
@@ -215,14 +208,12 @@ body.light .mobile-menu {
 }
 
 #loginBtn{ 
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: #667eea;
   color: white; 
 }
 
 #registerBtn{ 
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: #e91e63;
   color: white; 
 }
 
@@ -252,15 +243,13 @@ section {
 }
 
 #register-btn{
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #e91e63);
 }
 
 h1 {
   font-size: 3.9rem;
   font-weight: 800;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #e91e63);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -331,8 +320,7 @@ body.dark .flip-card-front{
 }
 
 .flip-card-back {
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   transform: rotateY(180deg);
 }
@@ -396,8 +384,7 @@ input:focus, textarea:focus {
 .submit-btn {
   width: 100%;
   padding: 1.4rem;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #e91e63);
   color: white;
   border: none;
   border-radius: 14px;
@@ -419,8 +406,7 @@ footer {
   width: 100%;
   padding: 3.5rem 1rem;
   text-align: center;
-    background: linear-gradient(135deg, #1e13c0, #1ee99b);
-
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   font-size: 1.05rem;
   font-weight: 500;

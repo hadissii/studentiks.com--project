@@ -1,10 +1,4 @@
-/* ============================================================= */
-/*  ROOMIEFIND – Modern Apartment & Roommate Finder               
-/*  FINAL PROFESSIONAL CSS – Perfectly Organized & Clean         
-/*  Sticky Footer | Light/Dark Mode | Mobile Ready | HAMBURGER MENU
-/* ============================================================= */
 
-/* ==================== 1. Core Reset & Layout ==================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -86,7 +80,7 @@ nav{
 .logo {
   font-size: 2.3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+background: linear-gradient(135deg, #2652c0, #1ee9c0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -213,12 +207,12 @@ body.light .mobile-menu {
 }
 
 #loginBtn{ 
-  background: #667eea;
+ background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white; 
 }
 
 #registerBtn{ 
-  background: #e91e63;
+ background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white; 
 }
 
@@ -248,13 +242,13 @@ section {
 }
 
 #register-btn{
-  background: linear-gradient(135deg, #667eea, #e91e63);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
 }
 
 h1 {
   font-size: 3.9rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -325,7 +319,7 @@ body.dark .flip-card-front{
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+ background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   transform: rotateY(180deg);
 }
@@ -389,7 +383,7 @@ input:focus, textarea:focus {
 .submit-btn {
   width: 100%;
   padding: 1.4rem;
-  background: linear-gradient(135deg, #667eea, #e91e63);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   border: none;
   border-radius: 14px;
@@ -411,7 +405,7 @@ footer {
   width: 100%;
   padding: 3.5rem 1rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   font-size: 1.05rem;
   font-weight: 500;

@@ -9,21 +9,52 @@
 </head>
 <body class="light">
 <nav>
-  <div class="nav-container">
-    <!-- Logo text like the second image -->
-    <a href="/" class="logo">Studentiks</a>
+  <!-- NAVBAR -->
+    <nav class="nav-container">
 
-    <!-- Navigation Links like the second image -->
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">AboutUs</a>
-      <a href="contact.html">ContactUs</a>
-      <a href="colleges.html">—Fakultetet</a>
+        <img src="fotot/LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
+        
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="colleges.html">Fakultetet</a>
+        </div>
+        
+        <!-- Desktop Auth Buttons & Theme Toggle -->
+        <div class="auth-buttons">
+            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+            
+            <!-- Theme Toggle -->
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        
+        <!-- Hamburger Menu (Mobile Only) -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="fakultetet.html">Fakultetet</a>
+        </div>
+        <div class="mobile-auth-buttons">
+            <button id="mobile-login-btn">Login</button>
+            <button id="mobile-register-btn">Create Your Account</button>
+        </div>
     </div>
-
-    <!-- Create Account button like the first image -->
-    <a href="#register" class="create-account-btn">Create Your Account</a>
-  </div>
 </nav>
 
 
@@ -42,12 +73,12 @@
     </div>
 
     <div style="margin-top:4rem; font-size:1.2rem;">
-      <p>Email: <strong>hello@roomiefind.com</strong></p>
-      <p>Instagram: <strong>@roomiefind</strong></p>
+      <p>Email: <strong>hello@Studenti-Ks.com</strong></p>
+      <p>Instagram: <strong>@Studenti-Ks</strong></p>
     </div>
   </section>
 
-  <footer>© 2025 RoomieFind – We reply fast!</footer>
+  <footer>© 2025 Studenti-Ks – We reply fast!</footer>
 
   <script>
     function toggleTheme() {

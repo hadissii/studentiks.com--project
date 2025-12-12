@@ -3,123 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – RoomieFind</title>
+  <title>Studenti-Ks - About Us</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css" href="colleges.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="colleges.css" />
 </head>
 <body class="light">
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+
   <!-- Navbar -->
   <nav>
-  <div class="nav-container">
+    <div class="nav-container">
 
-   <img class="logo" src="fotot/LogoStudentiks_pabg.png" alt="">
+      <!-- Logo -->
+      <img class="logo" src="fotot/LogoStudentiks_pabg.png" alt="Studenti-Ks Logo">
 
-    <!-- Desktop nav -->
-    <div class="nav-links">
+      <!-- Desktop Nav Links -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="colleges.html">Fakultetet</a>
+      </div>
+
+      <!-- Auth Buttons & Theme Toggle -->
+      <div class="auth-buttons">
+        <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact Us</a>
-      <a href="colleges.html">Fakultetet</a>
+      <a href="colleges.html">Colleges</a>
     </div>
 
-    <div class="auth-buttons">
-      <button href="login.html" id="loginBtn">Login</button>
-      <button href="register.html" id="register-btn">Register</button>
-       <label class="switch">
-    <input type="checkbox" id="themeToggle">
-    <span class="slider"></span>
+    <div class="mobile-auth-buttons">
+      <a href="login.html"><button id="loginBtnMobile">Login</button></a>
+      <a href="register.html"><button id="registerBtnMobile">Register</button></a>
     </div>
-
-    <!-- Hamburger (only ONE!) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-</nav>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="colleges.html">Colleges</a>
   </div>
 
-   <div class="mobile-auth-buttons">
-    <button id="loginBtnMobile">Login</button>
-    <button id="registerBtnMobile">Register</button>
-  </div>
-</div>
-
-
-  <!-- Main Content (grows to push footer down) -->
+  <!-- Main Content -->
   <main>
-    <section class="ateksti">
-      <h1>Rreth Studenti-ks </h1>
-<section class="about-section">
- 
-  <div class="about-card">
-    <img src="fotot/8c85a962-50e8-4b36-8f92-61ab49afd5a5.jpg" alt="Ekipi jonë">
-    <h3>Ne jemi tre studentë nga UBT: <strong>Hadis Sylka</strong>, <strong>Leart Shulina</strong> dhe <strong>Albert Vuqiterna</strong>. Punojmë si ekip për të ndërtuar projekte praktike dhe të përdorshme për studentët në Kosovë.
-    Qëllimi ynë është të krijojmë një platformë që u ndihmon studentëve me informata, mjete dhe përmbajtje të dobishme gjatë studimeve. Çdo pjesë e projektit ndërtohet me kujdes dhe bashkëpunim nga ne të tre.</h3>
-    <p><strong>studentin-ks – praktik, i qartë, për studentë.</strong></p>
-  </div>
-</section>
+  <section class="ateksti">
+    <h1>Rreth Studenti-ks</h1>
 
+    <section class="about-section">
+      <div class="about-card">
+        <img src="fotot/8c85a962-50e8-4b36-8f92-61ab49afd5a5.jpg" alt="Ekipi jonë" class="team-photo">
 
+        <div class="about-text">
+          <h3>
+            Ne jemi tre studentë nga UBT: <strong>Hadis Sylka</strong>, <strong>Leart Shulina</strong> dhe <strong>Albert Vuqiterna</strong>.
+          </h3>
+          <p>
+            Punojmë si ekip për të ndërtuar projekte praktike dhe të përdorshme për studentët në Kosovë. 
+            Qëllimi ynë është të krijojmë një platformë që u ndihmon studentëve me informata, mjete dhe përmbajtje të dobishme gjatë studimeve. 
+            Çdo pjesë e projektit ndërtohet me kujdes dhe bashkëpunim nga ne të tre.
+          </p>
+          <p><strong>studentin-ks – praktik, i qartë, për studentë.</strong></p>
+        </div>
+      </div>
     </section>
-  </main>
+  </section>
+</main>
 
-  <!-- Footer – Always at the bottom -->
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       © 2025 RoomieFind – Thinking for the future
     </div>
   </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Theme Toggle Script -->
+  <!-- Scripts -->
   <script>
+    // Theme Toggle
     function toggleTheme() {
       document.body.classList.toggle("dark");
       document.body.classList.toggle("light");
       const isDark = document.body.classList.contains("dark");
-      document.getElementById("themeToggle").textContent = isDark ? "Light Mode" : "Dark Mode";
       localStorage.setItem("theme", isDark ? "dark" : "light");
     }
 
@@ -127,9 +110,13 @@
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
       document.body.classList.remove("light");
-      document.getElementById("themeToggle").textContent = "Light Mode";
     }
+
+    // Optional: add event listener for checkbox
+    document.getElementById("themeToggle").addEventListener("change", toggleTheme);
   </script>
+
   <script src="script.js"></script>
+
 </body>
 </html>

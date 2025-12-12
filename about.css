@@ -1,3 +1,4 @@
+/* ==================== 1. Reset & Base ==================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +12,6 @@ html {
 
 body {
   min-height: 100vh;
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
@@ -27,256 +27,213 @@ body.dark {
   color: #e0e0e0; 
 }
 
-#Colleges{
-  text-align: center;
-  font-family: inherit;
-  position:relative;
-  top: 90px;
-}
-
+/* ==================== Main Section ==================== */
 main {
   flex: 1 0 auto;
-  padding-top: 100px;               
+  padding-top: 120px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,0,0,0.05));
 }
 
-/* ==================== 2. Navbar (Fixed Top) ==================== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ==================== About Section ==================== */
+.about-section {
   width: 100%;
-  padding: 1rem 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, rgba(38,82,192,0.15), rgba(30,200,180,0.1));
+}
+
+/* Glassmorphic Card */
+.about-card {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
   transition: all 0.4s ease;
 }
 
-/* From Uiverse.io by alexruix */ 
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  --background: #28096b;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: .5s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
+/* Team photo styling */
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
-  background: var(--background);
-  transition: .5s;
+  margin-bottom: 2rem;
+  border: 4px solid rgba(255,255,255,0.3);
+  transition: all 0.4s ease;
 }
 
-input:checked + .slider {
- background: linear-gradient(135deg, #4159b8, #1bcbb7);
+.team-photo:hover {
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.6);
 }
 
-input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
-}
-body.dark .nav-container {
-  background: rgba(20,20,20,0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo */
-.logo {
-  font-size: 2.3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #4159b8, #1bcbb7);
+/* About text */
+.about-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
-/* Hamburger Menu Button */
-.hamburger {
-  width: 35px;       /* Width of the icon */
-  height: 30px;      /* Height of the icon */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* space between lines */
-  cursor: pointer;
+body.dark .about-text h3 {
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #667eea, #1bcbb7);
 }
 
-.hamburger span {
-  display: block;
-  height: 4px;       /* Thickness of the lines */
-  width: 100%;
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+body.dark .about-text p {
+  color: #ddd;
+}
+
+/* Page Title */
+.ateksti h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 2px;        /* Rounded edges */
-  transition: all 0.3s ease; /* Smooth animation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.2);
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+/* Responsive */
+
+
+
+/* Page Title */
+#Colleges h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(20px);
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-
-/* Mobile Menu Overlay */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ==================== Flip Cards / College Cards ==================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
   width: 100%;
-  height: 100vh;
-  background: rgba(18, 18, 18, 0.98);
-  backdrop-filter: blur(20px);
-  transform: translateX(-100%);
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  z-index: 999;
+  padding: 0 20px;
+}
+
+/* Flip card container */
+.flip-card {
+  background: transparent;
+  height: 400px;
+  perspective: 1500px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* Front and Back faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: all 0.5s ease;
   padding: 2rem;
 }
 
-body.light .mobile-menu {
-  background: rgba(255, 255, 255, 0.95);
+/* Glassmorphism front */
+body.light .flip-card-front {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+body.dark .flip-card-front {
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(12px);
 }
 
-.mobile-menu.active {
-  transform: translateX(0);
-}
-
-.mobile-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.mobile-menu-links a {
-  font-size: 2.2rem;
+/* Front heading */
+.flip-card-front h3 {
+  font-size: 1.8rem;
   font-weight: 700;
-  color: inherit;
-  text-decoration: none;
-  padding: 1rem 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin: 1.2rem 0;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
 }
 
-.mobile-menu-links a:hover {
-  opacity: 0.8;
-  transform: translateX(10px);
+/* Back side with gradient */
+.flip-card-back {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
 }
 
-.mobile-auth-buttons {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.flip-card-back img {
+  width: 90%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.45);
 }
 
-/* Nav Links (Desktop) */
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
+/* Back text */
+.flip-card-back p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-weight: 600;
-  color: inherit;
-  transition: opacity 0.3s ease;
+/* ==================== Cool Hover Effects ==================== */
+.flip-card:hover {
+  transform: translateY(-5px);
 }
 
-.nav-links a:hover { 
-  opacity: 0.7; 
-}
-
-/* Action Buttons (Desktop) */
-.auth-buttons {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.auth-buttons button {
-  padding: 0.9rem 2rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
-}
-
-#loginBtn{ 
-background: linear-gradient(135deg, #4159b8, #1bcbb7);
-  color: white; 
-}
-
-#registerBtn{ 
- background: linear-gradient(135deg, #4159b8, #1bcbb7);
-  color: white; 
-}
-
-#themeToggle{ 
-  background: none;
-  border: transparent;
-  box-shadow: none;
-  font-size: 1.9rem;
-  padding: 0.4rem;
-  color: inherit;
-}
-
-.auth-buttons button:hover {
-  transform: translateY(-8px) scale(1.06);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.4);
-}
-
-.auth-buttons button:active {
-  transform: translateY(-3px);
+.flip-card-front:hover {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
 }
 
 /* ==================== 3. Typography & Sections ==================== */
@@ -285,23 +242,38 @@ section {
   text-align: center;
   padding: 100px 20px;
 }
-
-#register-btn{
-background: linear-gradient(135deg, #4159b8, #1bcbb7);
-}
-
 h1 {
   font-size: 3.9rem;
   font-weight: 800;
-background: linear-gradient(135deg, #4159b8, #1bcbb7);
+  background: linear-gradient(135deg, #4159b8, #1bcbb7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
 
-/* ==================== 4. Flip Cards (Home Page) ==================== */
+/* ==================== 4. About Section ==================== */
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #4159b8, #1bcbb7);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.about-card {
+  max-width: 700px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+/* ==================== 5. Flip Cards ==================== */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -310,13 +282,11 @@ background: linear-gradient(135deg, #4159b8, #1bcbb7);
   margin: 4rem auto;
   padding: 0 20px;
 }
-
 .flip-card {
   background: transparent;
   height: 390px;
   perspective: 1200px;
 }
-
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -325,15 +295,9 @@ background: linear-gradient(135deg, #4159b8, #1bcbb7);
   transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-style: preserve-3d;
 }
-
-#flip-card{
-  align-content:center;
-}
-
 .flip-card:hover .flip-card-inner{
   transform: rotateY(180deg);
 }
-
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -348,27 +312,18 @@ background: linear-gradient(135deg, #4159b8, #1bcbb7);
   justify-content: center;
   align-items: center;
 }
-
-body.light .flip-card-front{
-  background: white;
-}
-
-body.dark .flip-card-front{
-  background: #1e1e1e; 
-}
-
+body.light .flip-card-front{ background: white; }
+body.dark .flip-card-front{ background: #1e1e1e; }
 .flip-card-front h3 {
   font-size: 1.9rem;
   margin: 1.8rem 0 1rem;
   font-weight: 700;
 }
-
 .flip-card-back {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   transform: rotateY(180deg);
 }
-
 .flip-card-back img {
   width: 82%;
   max-width: 320px;
@@ -377,26 +332,16 @@ body.dark .flip-card-front{
   box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
 
-/* ==================== 5. Forms (Login / Register / Contact) ==================== */
+/* ==================== 6. Forms ==================== */
 .form-container {
   max-width: 480px;
-  position: relative;
-  top: 30px;
-  width: 100%;
   margin: 2rem auto;
   padding: 3.8rem 3rem;
   border-radius: 28px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
 }
-
-body.light .form-container{ 
-  background: white;
-}
-
-body.dark .form-container{ 
-  background: #1e1e1e;
-}
-
+body.light .form-container{ background: white; }
+body.dark .form-container{ background: #1e1e1e; }
 input, textarea {
   width: 100%;
   padding: 1.2rem;
@@ -405,26 +350,14 @@ input, textarea {
   border-radius: 14px;
   font-family: inherit;
   font-size: 1.05rem;
-  transition: all 0.3s ease;
 }
-
-body.light input,
-body.light textarea { 
-  background: #f8f8ff; 
-}
-
-body.dark input,
-body.dark textarea { 
-  background: #333; 
-  color: white; 
-}
-
+body.light input, body.light textarea { background: #f8f8ff; }
+body.dark input, body.dark textarea { background: #333; color: white; }
 input:focus, textarea:focus {
   outline: none;
   transform: translateY(-2px);
   box-shadow: 0 0 0 5px rgba(102, 126, 234, 0.25);
 }
-
 .submit-btn {
   width: 100%;
   padding: 1.4rem;
@@ -438,13 +371,12 @@ input:focus, textarea:focus {
   margin-top: 1.8rem;
   transition: all 0.4s ease;
 }
-
 .submit-btn:hover {
   transform: translateY(-4px) scale(1.04);
   box-shadow: 0 20px 40px rgba(233, 30, 99, 0.5);
 }
 
-/* ==================== 6. Footer – Always at Bottom ================= */
+/* ==================== 7. Footer ==================== */
 footer {
   flex-shrink: 0;
   width: 100%;
@@ -457,157 +389,42 @@ footer {
   letter-spacing: 0.5px;
 }
 
-.about-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #4159b8, #1bcbb7);
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-.ateksti{
- 
-}
-
-
-
-.about-card {
-  max-width: 700px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-}
-
-
-
-
-
-/* Responsive */
+/* ==================== 8. Responsive ==================== */
 @media (max-width: 768px) {
-  .about-card {
-    padding: 30px 20px;
-  }
-  .about-section h1 {
-    font-size: 2.4rem;
-  }
+  #Colleges h1 { font-size: 3rem; }
+  .flip-card { height: 350px; }
 }
 
 @media (max-width: 480px) {
-  .about-card p {
-    font-size: 1rem;
-  }
+  #Colleges h1 { font-size: 2.5rem; }
+  .flip-card { height: 320px; }
 }
-
-
-/* ==================== 7. Responsive Design ==================== */
-@media (max-width: 992px) {
-  h1 { font-size: 3.3rem; }
-  .card-grid { gap: 2rem; }
-}
-
+@media (max-width: 992px) { h1 { font-size: 3.3rem; } .card-grid { gap: 2rem; } }
 @media (max-width: 768px) {
   h1 { font-size: 2.9rem; }
-  
-  /* Show hamburger, hide desktop nav */
-  .hamburger {
-    display: flex;
-  }
-  
-  .nav-links,
-  .auth-buttons {
-    display: none;
-  }
-  
+  .hamburger { display: flex; }
+  .nav-links, .auth-buttons { display: none; }
   .flip-card { height: 360px; }
   .form-container { padding: 3rem 2rem; }
+  .about-card { padding: 30px 20px; }
+  .about-section h1 { font-size: 2.4rem; }
 }
-
 @media (max-width: 480px) {
   h1 { font-size: 2.5rem; }
   .logo { font-size: 2rem; }
   .form-container { padding: 2.5rem 1.8rem; }
   .submit-btn { font-size: 1.15rem; padding: 1.2rem; }
+  .about-card p { font-size: 1rem; }
 }
 
-/* ==================== NAVBAR TEXT COLORS ==================== */
-
-/* Desktop nav text */
-nav .logo,
-nav .nav-links a,
-nav .auth-buttons button,
-nav .hamburger span {
-  color: inherit;
+@media (max-width: 768px) {
+  .about-card { padding: 2rem 1.5rem; }
+  .team-photo { width: 130px; height: 130px; }
+  .ateksti h1 { font-size: 2.8rem; }
 }
 
-/* Light mode navbar text */
-body.light nav .logo,
-body.light nav .nav-links a,
-body.light nav .auth-buttons button,
-body.light nav .hamburger span {
-  color: #222;
-}
-
-/* Dark mode navbar text */
-body.dark nav .logo,
-body.dark nav .nav-links a,
-body.dark nav .auth-buttons button,
-body.dark nav .hamburger span {
-  color: #fff;
-}
-
-/* ==================== MOBILE MENU TEXT COLORS ==================== */
-
-/* Light mode mobile menu text */
-body.light .mobile-menu,
-body.light .mobile-menu a,
-body.light .mobile-auth-buttons button {
-  color: #222 !important;
-}
-
-/* Dark mode mobile menu text */
-body.dark .mobile-menu,
-body.dark .mobile-menu a,
-body.dark .mobile-auth-buttons button {
-  color: #fff !important;
-}
-
-/* ==================== NAVBAR BACKGROUND FIX ==================== */
-
-body.light nav {
-  background: rgba(255, 255, 255, 0.95); /* more solid */
-  backdrop-filter: blur(10px);
-}
-
-body.dark nav {
-  background: rgba(20, 20, 20, 0.92); 
-  backdrop-filter: blur(10px);
-}
-
-/* ==================== MOBILE MENU BACKGROUND ==================== */
-
-body.light .mobile-menu {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-}
-
-body.dark .mobile-menu {
-  background: rgba(30, 30, 30, 0.95);
-  backdrop-filter: blur(8px);
-}
-
-/* ==================== HAMBURGER VISIBILITY FIX ==================== */
-
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  margin: 5px 0;
-  border-radius: 4px;
-  transition: 0.3s ease;
+@media (max-width: 480px) {
+  .about-card { padding: 1.5rem 1rem; }
+  .team-photo { width: 110px; height: 110px; }
+  .ateksti h1 { font-size: 2.2rem; }
 }

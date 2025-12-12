@@ -91,7 +91,6 @@ main {
   margin-bottom: 1rem;
   color: #222;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -119,7 +118,6 @@ body.dark .about-text p {
   text-align: center;
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 3px 15px rgba(0,0,0,0.2);
 }
@@ -133,7 +131,7 @@ body.dark .about-text p {
   font-size: 4rem;
   font-weight: 800;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
+
   -webkit-text-fill-color: transparent;
   margin-bottom: 3rem;
   text-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -246,7 +244,6 @@ h1 {
   font-size: 3.9rem;
   font-weight: 800;
   background: linear-gradient(135deg, #4159b8, #1bcbb7);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
   line-height: 1.2;

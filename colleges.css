@@ -307,6 +307,15 @@ body.dark .mobile-menu-links a {
 }
 
 /* ==================== COLLEGES PAGE ==================== */
+.college-card {
+    transition: transform 10s ease-in-out; /* smooth rotation */
+    transform-style:flat;
+  }
+
+  .college-card:hover {
+    transform: rotateY(180deg);
+  }
+
 
 /* Main container below navbar */
 .colleges-container {

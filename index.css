@@ -361,7 +361,9 @@ body.dark .hero-content p { color: #bbb; }
   margin: 40px auto;
 }
 
-.flip-card { perspective: 1000px; }
+.flip-card { 
+  perspective: 1000px;
+}
 
 .flip-card-inner {
   position: relative;
@@ -372,7 +374,9 @@ body.dark .hero-content p { color: #bbb; }
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card:hover .flip-card-inner { 
+  transform: rotateY(180deg);
+}
 
 .flip-card-front, .flip-card-back {
   position: absolute;

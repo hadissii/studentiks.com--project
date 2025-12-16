@@ -1,126 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Studenti-Ks - About Us</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="about.css" />
-  <link rel="stylesheet" href="colleges.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studenti-Ks - Rreth Nesh</title>
+  <link rel="stylesheet" href="about.css">
 </head>
 <body class="light">
+  <!-- NAVBAR -->
+    <nav class="nav-container">
 
-  <!-- Navbar -->
-  <nav>
-    <div class="nav-container">
-
-      <!-- Logo -->
-      <img class="logo" src="LogoStudentiks_pabg.png" alt="Studenti-Ks Logo">
-
-      <!-- Desktop Nav Links -->
-      <div class="nav-links">
-        <a href="index.html">Ballina</a>
-        <a href="about.html">Rreth Nesh</a>
-        <a href="contact.html">Kontakti</a>
-        <a href="colleges.html">Fakultetet</a>
-      </div>
-
-      <!-- Auth Buttons & Theme Toggle -->
-      <div class="auth-buttons">
+        <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
+        
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links">
+            <a href="index.html">Ballina</a>
+            <a href="about.html">Rreth Nesh</a>
+            <a href="contact.html">Kontakti</a>
+            <a href="colleges.html">Fakultetet</a>
+        </div>
+        
+        <!-- Desktop Auth Buttons & Theme Toggle -->
+        <div class="auth-buttons">
         <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
-        <label class="switch">
-          <input type="checkbox" id="themeToggle">
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <!-- Hamburger Menu (Mobile) -->
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-links">
-      <a href="index.html">Ballina</a>
-      <a href="about.html">Rreth Nesh</a>
-      <a href="contact.html">Kontakti</a>
-      <a href="colleges.html">Fakultetet</a>
-    </div>
-
-    <div class="mobile-auth-buttons">
-      <a href="login.html"><button id="loginBtnMobile">Login</button></a>
-      <a href="register.html"><button id="registerBtnMobile">Register</button></a>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main>
-  <section class="ateksti">
-    <h1>Rreth Studenti-ks</h1>
-
-    <section class="about-section">
-      <div class="about-card">
-        <img src="fotot/8c85a962-50e8-4b36-8f92-61ab49afd5a5.jpg" alt="Ekipi jonë" class="team-photo">
-
-        <div class="about-text">
-          <h3>
-            Ne jemi tre studentë nga UBT: <strong>Hadis Sylka</strong>, <strong>Leart Shulina</strong> dhe <strong>Albert Vuqiterna</strong>.
-          </h3>
-          <p>
-            Punojmë si ekip për të ndërtuar projekte praktike dhe të përdorshme për studentët në Kosovë. 
-            Qëllimi ynë është të krijojmë një platformë që u ndihmon studentëve me informata, mjete dhe përmbajtje të dobishme gjatë studimeve. 
-            Çdo pjesë e projektit ndërtohet me kujdes dhe bashkëpunim nga ne të tre.
-          </p>
-          <p><strong>studentin-ks – praktik, i qartë, për studentë.</strong></p>
+            
+            <!-- Theme Toggle -->
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
         </div>
-      </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="index.html">Ballina</a>
+            <a href="about.html">Rreth Nesh</a>
+            <a href="contact.html">Kontakti</a>
+            <a href="colleges.html">Fakultetet</a>
+        </div>
+        <div class="mobile-auth-buttons">
+            <a href="login.html"><button id="mobile-login-btn">Login</button></a>
+            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
+        </div>
+    </div>        
+    <!-- Hamburger Menu (Mobile Only) -->
+  <button class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+</nav>
+  <main>
+    <section class="page-hero">
+        <h1>About Us</h1>
+        <p>Your bridge to better student living in Kosovo.</p>
     </section>
-  </section>
+
+    <section class="about-layout">
+        <div class="about-content">
+          <h2>Simplifying Student Life</h2>
+          <p>
+            Studenti-Ks was built by students, for students. We know how hard it is to find 
+            affordable housing and trustworthy roommates while balancing university life.
+          </p>
+          <p>
+            Our mission is to create a digital space where every student in Kosovo 
+            can find a place that feels like home.
+          </p>
+        </div>
+
+        <div class="about-glass-card">
+          <h3>The Vision</h3>
+          <p>To become the most trusted network for students moving to the city for their education.</p>
+          <div class="highlight">Est. 2024</div>
+        </div>
+    </section>
 </main>
+<script>
+  const themeToggle = document.querySelector('.switch input');
+const body = document.body;
 
-  <!-- Footer -->
-  <footer>
-        © 2025 Studenti-Ks. All rights reserved.
-    </footer>
+// 1. Check for saved user preference on load
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+  body.classList.remove('light', 'dark');
+  body.classList.add(currentTheme);
+  
+  // Update the toggle switch state
+  if (currentTheme === 'dark') {
+    themeToggle.checked = true;
+  }
+} else {
+  // Default to light if no preference is saved
+  body.classList.add('light');
+}
 
-  <!-- Scripts -->
-  <script>
- // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                body.classList.remove('light');
-                body.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark');
-                body.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-        
-        // Check saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            body.classList.remove('light');
-            body.classList.add('dark');
-            themeToggle.checked = true;
-        }
-        
-        // Mobile Menu Toggle
+// 2. Listen for toggle changes
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    body.classList.replace('light', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    body.classList.replace('dark', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+});
+</script>
+<script>
+   // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -136,9 +124,12 @@
                 mobileMenu.classList.remove('active');
             });
         });
-  </script>
-
-  <script src="script.js"></script>
-
+</script>
+  
+  <footer>
+  © 2025 Studenti-Ks. All rights reserved.
+  </footer>
+</main>
 </body>
 </html>
+

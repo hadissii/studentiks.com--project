@@ -212,14 +212,14 @@ input:checked + .slider:before {
 }
 
 .hamburger span {
-  display: block;
+  display: flex;
   height: 4px;
   width: 100%;
+  justify-content: space-between;
   background-color: #2652c0;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-
 
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px,8px); }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(20px); }

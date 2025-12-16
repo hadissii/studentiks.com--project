@@ -247,7 +247,6 @@ input:checked + .slider:before {
 
   flex-direction: column;
   justify-content: space-between;
-  order: 2;
 
   background: none;
   border: none;
@@ -259,10 +258,11 @@ input:checked + .slider:before {
 }
 
 .hamburger span {
-  display: block;
+  display: flex;
   height: 4px;
   width: 100%;
-  background-color: #667eea;
+  justify-content: space-between;
+  background-color: #2652c0;
   border-radius: 2px;
   transition: all 0.3s ease;
 }

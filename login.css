@@ -349,7 +349,7 @@ body.dark .mobile-menu-links a {
 /* ==================== 3. Login Page ==================== */
 .login-section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -421,7 +421,7 @@ body.dark .form-group label {
 .login-form-container input {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 0 0;
+  margin: 5px auto 0 auto;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
@@ -449,8 +449,9 @@ body.dark .login-form-container input {
 }
 
 .login-submit-btn {
-  width: 100%;
+  width: 90%;
   padding: 16px;
+  margin: 20px auto 0 auto;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;
   border: none;
@@ -516,8 +517,10 @@ body.dark .login-form-container p {
 /* Additional form options */
 .form-options {
   display: flex;
+  max-width: none;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
   margin: 15px 0 25px 0;
 }
 
@@ -633,12 +636,22 @@ footer {
   }
   
   .login-form-container {
-    padding: 30px 25px;
-    margin: 0 20px;
+    display: flex;
+    margin: 25px auto 0 auto;
+    min-height: 100vh;
+    padding: 25px 20px 0px 40px;
+    justify-content: center;
+    align-items: center;
   }
   
+  .login-submit-btn{
+      margin: 20px auto 0 auto;
+      width: 90%;
+  }
+
   .form-options {
     flex-direction: column;
+    width: 90%;
     gap: 15px;
     align-items: flex-start;
   }
@@ -673,7 +686,11 @@ footer {
   }
   
   .login-form-container {
-    padding: 25px 20px;
+    display: flex;
+    min-height: 100vh;
+    padding: 25px 20px 0px 40px;
+    justify-content: center;
+    align-items: center;
   }
   
   .form-group label {
@@ -683,6 +700,8 @@ footer {
   .login-form-container input {
     padding: 12px;
     font-size: 0.95rem;
+    margin: 20px auto 0 auto;
+    width: 90%;
   }
   
   .login-submit-btn {

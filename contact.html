@@ -50,7 +50,8 @@
         </div>
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
-            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
+            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>            
+            <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
       </nav>
@@ -113,5 +114,13 @@
             });
         });
   </script>
+   <script>
+        const switch2 = document.getElementById('switch');
+
+switch2.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+    
+    </script>
 </body>
 </html>

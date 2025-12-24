@@ -204,7 +204,7 @@ input:checked + .slider:before {
 
 /* Hamburger Menu - Hidden on desktop */
 .hamburger {
-  display: flex;
+  display: none;
   width: 46px;
   height: 30px;
 
@@ -270,10 +270,11 @@ body.dark .mobile-menu {
 
 .mobile-menu.active {
   right: 0;
+  
 }
 
 .mobile-menu-links {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   gap: 25px;
 }
@@ -376,6 +377,43 @@ body.dark .form-container input {
   background: #333;
   color: #fff;
   border-color: #555;
+}
+
+#switch {
+  height: 20px;
+  width: 20px;
+  border: 2px solid #121212;
+  background-color: transparent;
+  color: #121212;
+  padding: 1.2rem;
+  transition: all 0.5s ease-in-out; 
+  border-radius: 15px;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark #switch {
+  background-color: #ffffff;
+  color: #121212;
+  border-color: #ffffff;
+}
+
+#switch i {
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+#switch:hover {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark #switch:hover {
+  background-color: #e0e0e0;
+  color: #000000;
 }
 
 .submit-btn {

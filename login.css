@@ -225,7 +225,7 @@ input:checked + .slider:before {
 /* Hamburger Menu - Hidden on desktop */
 .hamburger {
   display: none;
-  width: 35px;
+  width: 46px;
   height: 30px;
 
   flex-direction: column;
@@ -241,7 +241,6 @@ input:checked + .slider:before {
 }
 
 .hamburger span {
-  display: flex;
   height: 4px;
   width: 100%;
   justify-content: space-between;
@@ -291,10 +290,11 @@ body.dark .mobile-menu {
 
 .mobile-menu.active {
   right: 0;
+  
 }
 
 .mobile-menu-links {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   gap: 25px;
 }
@@ -315,7 +315,7 @@ body.dark .mobile-menu-links a {
 }
 
 .mobile-menu-links a:hover {
-  color: #2652c0;
+  color: #667eea;
 }
 
 .mobile-auth-buttons {
@@ -337,8 +337,8 @@ body.dark .mobile-menu-links a {
 
 #mobile-login-btn {
   background: transparent;
-  color: #2652c0;
-  border: 2px solid #2652c0;
+  color: #667eea;
+  border: 2px solid #667eea;
 }
 
 #mobile-register-btn {

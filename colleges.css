@@ -14,13 +14,32 @@ html, body {
 
 /* Body & Background */
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* This creates a layer specifically for the background */
+body::before {
+  content: "";
+  position: fixed; /* Keeps it covering the screen as you scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
   background-image: url(UBT7784-e1564990441516.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
-  overflow-x: hidden;
-  backdrop-filter: blur(5px);
+  
+  filter: blur(8px); 
+  
+  /* This prevents white "leaking" edges and keeps the layer behind text */
+  transform: scale(1.1); 
+  z-index: -1; 
 }
 
 /* ==================== 2. Navbar ==================== */
@@ -78,6 +97,29 @@ body.dark .nav-container {
   position: relative;
   transition: color 0.3s ease;
   white-space: nowrap;
+}
+
+#switch {
+  height: 20px;
+  width: 20px;
+  border: 2px solid #121212;
+  background-color: transparent;
+  color: #121212;
+  border-radius:15px;
+  padding: 1.2rem;
+  transition: all 0.5s ease-in-out; 
+  cursor: pointer;
+}
+
+body.dark #switch {
+  background-color: #ffffff;
+  color: #121212;
+  border-color: #ffffff;
+}
+
+#switch:hover {
+  background-color: #121212;
+  color: white;
 }
 
 body.dark .nav-links a { color: #cbd5e0; }
@@ -309,7 +351,6 @@ body.dark .mobile-menu-links a {
 
 /* ==================== COLLEGES PAGE ==================== */
 .college-card {
-    transition: transform 10s ease-in-out; /* smooth rotation */
     transform-style:flat;
   }
 
@@ -323,7 +364,7 @@ body.dark .mobile-menu-links a {
   margin-top: 100px; /* leave space for fixed navbar */
   padding: 40px 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 30px;
 }
 
@@ -333,7 +374,7 @@ body.dark .mobile-menu-links a {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 1.6s ease, box-shadow 1.6s ease;
   display: flex;
   flex-direction: column;
 }
@@ -348,6 +389,7 @@ body.dark .college-card {
 .college-card img {
   width: 100%;
   height: 180px;
+  rotate: (0deg);
   object-fit: cover;
 }
 
@@ -357,6 +399,7 @@ body.dark .college-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  rotate: (0deg);
 }
 
 .college-card .college-info h3 {

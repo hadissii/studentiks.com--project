@@ -41,7 +41,8 @@
         </div>
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
-            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
+            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>            
+            <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>        
     <!-- Hamburger Menu (Mobile Only) -->
@@ -73,9 +74,14 @@
         <div class="about-glass-card">
           <h3>The Vision</h3>
           <p>To become the most trusted network for students moving to the city for their education.</p>
-          <div class="highlight">Est. 2024</div>
+          <div class="highlight">Est. 2025</div>
         </div>
     </section>
+</main>
+
+<footer>
+  © 2025 Studenti-Ks. All rights reserved.
+  </footer>
 </main>
 <script>
   const themeToggle = document.querySelector('.switch input');
@@ -125,11 +131,17 @@ themeToggle.addEventListener('change', () => {
             });
         });
 </script>
+<script>
+        const switch2 = document.getElementById('switch');
+
+switch2.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+    
+    </script>
+
   
-  <footer>
-  © 2025 Studenti-Ks. All rights reserved.
-  </footer>
-</main>
+  
 </body>
 </html>
 

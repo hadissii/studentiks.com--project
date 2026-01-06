@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentiKs- Create Account</title>
+    <title>Studenti-Ks - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body class="light">
-    <!-- ==================== NAVBAR ==================== -->
+      <!-- NAVBAR -->
     <nav class="nav-container">
         <!-- Logo -->
         <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
-            <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth nesh</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">Rreth Nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
             <!-- Theme Toggle -->
@@ -53,58 +52,73 @@
         <div class="mobile-auth-buttons">
             <a href="login.html"><button id="mobile-login-btn">Login</button></a>
             <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
-            <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
     
-    <!-- ==================== MAIN CONTENT ==================== -->
-    <main>
-        <section>
-            <h1 class="title">Create Your Account</h1>
-            <p class="title" >Join students across Kosovo who are finding the perfect homes and compatible roommates.</p>
-            
-            <div class="form-container">
-                <form id="signup-form" action="register.php" method="post">
-                    <div class="form-group">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" id="full-name" placeholder="Enter your full name" name="name" required>
+    
+    <!-- MAIN CONTENT -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Studenti-Ks</h1>
+            <p>Find your perfect student accommodation and compatible roommates across Kosovo's universities.</p>
+        </div>
+        
+        <!-- Card Grid -->
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Student Housing</h3>
+                        <p>Find affordable and comfortable housing near your campus</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email address" name="email" required>
+                    <div class="flip-card-back">
+                        <img src="housing.jpg" alt="Student Housing">
+                        <p>Modern apartments and dormitories</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter your phone number" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Password (minimum 6 characters)</label>
-                        <input type="password" id="password" placeholder="Create a password" minlength="6" name="password" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" placeholder="Confirm your password" name="confirm_password" required>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Create Account</button>
-                    
-                    <p>Already have an account? <a href="login.html">Login here</a></p>
-                </form>
+                </div>
             </div>
-        </section>
+            
+            <!-- Card 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Roommate Matching</h3>
+                        <p>Connect with compatible roommates based on your preferences</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="roommates.jpg" alt="Roommate Matching">
+                        <p>Smart matching algorithm</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>University Network</h3>
+                        <p>Access housing options across all major universities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="Image3.jpg" alt="University Network">
+                        <p>All universities in Kosovo covered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <footer>
-        © 2025 Studenti-Ks. All rights reserved.
+        <div class="footer-bottom">
+            <p>&copy; 2024 Studenti-Ks. All rights reserved.</p>
+        </div>
     </footer>
-    <script>
-     // Theme Toggle
+    
+        <script>
+        // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
         
@@ -145,7 +159,7 @@
             });
         });
     </script>
-    <script>
+     <script>
         const switch2 = document.getElementById('switch');
 
 switch2.addEventListener("click", () => {
@@ -153,6 +167,5 @@ switch2.addEventListener("click", () => {
 });
     
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

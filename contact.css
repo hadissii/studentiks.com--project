@@ -531,7 +531,7 @@ input:focus, textarea:focus {
 footer {
   flex-shrink: 0;
   width: 100%;
-  padding: 3.5rem 1rem;
+  padding: 30px 0;
   text-align: center;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: white;

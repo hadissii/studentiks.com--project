@@ -437,14 +437,13 @@ main, .content-wrapper {
 footer {
  flex-shrink: 0;
   width: 100%;
-  padding: 2rem 40px;
+  padding: 30px 0;
   display: flex;
   justify-content: center; 
-  align-items: center;
   background: linear-gradient(135deg, #667eea, #10bbaa);
   color: white;
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center;     /* Centers the content vertically */
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
   font-size: 1.05rem;
   box-sizing: border-box; 

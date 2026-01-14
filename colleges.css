@@ -12,6 +12,10 @@ html, body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Body & Background */
 body {
   margin: 0;

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $conn = new mysqli('localhost', 'root', '', 'studentiks');
 
 if ($conn->connect_error) {
@@ -17,21 +19,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
     }
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
+    
     $checkEmail = $conn->prepare("SELECT email FROM users WHERE email = ?");
-$checkEmail->bind_param("s", $email);
-$checkEmail->execute();
-$result = $checkEmail->get_result();
+    $checkEmail->bind_param("s", $email);
+    $checkEmail->execute();
+    $result = $checkEmail->get_result();
 
-if ($result->num_rows > 0) {
-    die("This email is already registered.");
-}
+    if ($result->num_rows > 0) {
+        die("This email is already registered.");
+    }
+    $checkEmail->close();
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $phone, $hashed_password);
+    $stmt->bind_param("ssss", $name, $email, $phone, $password);
 
     if ($stmt->execute()) {
-        header("Location: index.php");
+        $_SESSION['user_id'] = $conn->insert_id; 
+
+        header("Location: user.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;

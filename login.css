@@ -349,7 +349,8 @@ body.dark .mobile-menu-links a {
 /* ==================== 3. Login Page ==================== */
 .login-section {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
+  margin: 0 auto;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -391,12 +392,13 @@ body.dark .login-section p {
 /* Login Form Container */
 .login-form-container {
   max-width: 500px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: left;
+  align-items: flex-start;
 }
 
 body.light .login-form-container { 
@@ -412,11 +414,14 @@ body.dark .login-form-container {
 /* Form Group Styles */
 .form-group {
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-left: 5%;
+  margin-bottom: 1px;
   font-weight: 500;
   font-size: 14px;
   color: #4a5568;
@@ -428,8 +433,8 @@ body.dark .form-group label {
 
 .login-form-container input {
   width: 100%;
-  padding: 15px;
-  margin: 5px auto 0 auto;
+  padding: 12px;
+  margin: 0 auto;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
@@ -457,7 +462,7 @@ body.dark .login-form-container input {
 }
 
 .login-submit-btn {
-  width: 90%;
+  width: 100%;
   padding: 16px;
   margin: 20px auto 0 auto;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
@@ -584,6 +589,14 @@ body.dark .register-link-container {
   text-decoration: underline;
 }
 
+.hr1{
+  display: block;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto 0px auto;
+}
+
 /* ==================== 4. Footer ==================== */
 footer {
   flex-shrink: 0;
@@ -622,6 +635,7 @@ footer {
   .nav-container {
     padding: 0 20px;
     height: 70px;
+    max-width: 500px;
   }
   
   .nav-links,
@@ -645,23 +659,37 @@ footer {
   
   .login-form-container {
     display: flex;
-    margin: 25px auto 0 auto;
-    min-height: 100vh;
-    padding: 25px 20px 0px 40px;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    width: 90%;
+    margin: 25px auto;
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-form-container input {
+    width: 100%;
+    margin: 0;
   }
   
-  .login-submit-btn{
-      margin: 20px auto 0 auto;
-      width: 90%;
+  .login-submit-btn {
+    width: 100%;
+    margin: 10px auto;
   }
 
   .form-options {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 90%;
-    gap: 15px;
-    align-items: flex-start;
+    gap: 10px;
   }
 }
 
@@ -695,7 +723,7 @@ footer {
   
   .login-form-container {
     display: flex;
-    min-height: 100vh;
+    min-height: auto;
     padding: 25px 20px 0px 40px;
     justify-content: center;
     align-items: center;

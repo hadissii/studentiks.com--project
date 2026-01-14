@@ -9,22 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body class="light">
-    <nav class="nav-container">
-        <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
+    <!-- ==================== NAVBAR ==================== -->
+        <nav class="nav-container">
+        <!-- Logo -->
+        <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
+        
+        <!-- Desktop Navigation Links -->
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">Rreth Nesh</a>
+            <a href="index.html">Ballina</a>
+            <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
+        
+        <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
+            <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
-            <a href="register.html"><button id="register-btn">Register</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+            
+            <!-- Theme Toggle -->
             <label class="switch">
                 <input type="checkbox" id="theme-toggle">
                 <span class="slider"></span>
             </label>
         </div>
+        
+        <!-- Hamburger Menu (Mobile Only) -->
         <button class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -32,16 +43,19 @@
         </button>
     </nav>
     
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
             <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth Nesh</a>
+            <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
-            <a href="login.html"><button id="mobile-login-btn">Login</button></a>
-            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
+             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+            <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
@@ -52,7 +66,7 @@
             <p>Log in to access your account and continue finding the perfect homes and compatible roommates.</p>
             
             <div class="login-form-container">
-                <form id="login-form" action="connect.php" method="post">
+                <form id="login-form" action="login.php" method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" placeholder="Enter your email"  name="email" required>
@@ -77,6 +91,8 @@
                     <div class="register-link-container">
                         <p>Don't have an account?</p>
                         <a href="register.html" class="register-link">Register</a>
+                        <hr class="hr1">
+                        <a href="logout.php" style="color: white;gap: 1rem;">Log Out</a>
                     </div>
                 </form>
             </div>
@@ -120,52 +136,56 @@
         hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     });
+const loginForm = document.getElementById('login-form');
 
-    // =====================
-    // Login Form Logic
-    // =====================
-    const loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', (e) => {
 
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
-        const submitBtn = document.querySelector('.login-submit-btn');
-        const originalText = submitBtn.textContent;
+    if (!email || !password) {
+        alert("Ju lutem plotësoni të gjitha fushat.");
+        return;
+    }
 
-        if (!email || !password) return;
+    // 2. Prepare Data
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
 
-        // Disable button and show "Logging in..."
-        submitBtn.textContent = 'Logging in...';
-        submitBtn.disabled = true;
-
-        // Prepare form data
-        const formData = new FormData();
-        formData.append('email', email);
-        formData.append('password', password);
-
-        // Send request to PHP
-        fetch('login.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
+    // 3. Send to PHP Bridge
+    fetch('login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Serveri nuk u përgjigj saktë.');
+        }
+        return response.text(); 
+    })
+    .then(rawText => {
+        try {
+            const data = JSON.parse(rawText);
+            
             if (data.status === "success") {
-                window.location.href = "index.php";
+                // SUCCESS: Redirect to the PHP profile page
+                window.location.href = "user.php";
             } else {
-                // Login failed → just reset button, no popup
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
+                // FAILURE: Show the specific error (e.g., "Wrong password")
+                alert(data.message);
             }
-        })
-        .catch(() => {
-            // On server error → reset button, no popup
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
+        } catch (error) {
+            // This happens if PHP sends a database error or a typo instead of JSON
+            console.error("Server Error Response:", rawText);
+            alert("Ndodhi një gabim në server. Kontrolloni Console (F12).");
+        }
+    })
+    .catch(err => {
+        console.error("Fetch Error:", err);
+        alert("Lidhja dështoi. Sigurohuni që XAMPP (Apache & MySQL) është i ndezur.");
     });
+});
 </script>
 
 </body>

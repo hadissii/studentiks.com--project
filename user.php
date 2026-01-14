@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Studenti-Ks - Kontakti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="contact.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studenti-Ks - User</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$conn = new mysqli("localhost", "root", "", "studentiks");
+
+$id = $_SESSION['id'];
+$result = $conn->query("select * from users where id = $id");
+
+if ($result->num_rows === 0) {
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+$user = $result->fetch_assoc();
+?>
+
+
 </head>
-<body class="light">
-   <!-- ==================== NAVBAR ==================== -->
+<body>
+    <div class="page-content">
+       <!-- ==================== NAVBAR ==================== -->
         <nav class="nav-container">
         <!-- Logo -->
         <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
@@ -24,7 +48,7 @@
         
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-            <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
@@ -52,39 +76,37 @@
             <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
-             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+             <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
-    
-  <section>
-    <h1>Get in Touch</h1>
-    <p style="font-size:1.3rem;max-width:700px;margin:2rem auto;">
-      Have questions about apartments or roommates? We’re here to help 24/7!
+
+    <div class="profile-container">
+    <div class="profile-left">
+        <img src="https://i.pravatar.cc/300" alt="Profile Photo">
+    </div>
+<div class="profile-right">
+    <h2><?php echo strtoupper(htmlspecialchars($user['name'])); ?></h2>
+
+    <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+
+    <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone']); ?></p>
+
+    <p>
+        <strong>Status:</strong>
+        <span class="status admin">Admin</span> 
     </p>
-
-    <div class="form-container">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="text" placeholder="Subject" required />
-      <textarea placeholder="Your Message" rows="6" style="width:100%; padding:1rem; margin:1rem 0; border:none; border-radius:12px; font-family:inherit; resize:vertical;"></textarea>
-      <button class="submit-btn" style="margin-top:0;">Send Message</button>
+</div>
+</div>
+<footer>
+     © 2025 Studenti-Ks. All rights reserved.
+</footer>  
     </div>
 
-    <div style="margin-top:4rem; font-size:1.2rem;">
-      <p>Email: <strong>hello@Studenti-Ks.com</strong></p>
-      <p>Instagram: <strong>@Studenti-Ks</strong></p>
-    </div>
-  </section>
-
-    <footer>
-        © 2025 Studenti-Ks. All rights reserved.
-    </footer>
-
-  <script>
+   <script>
      // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
@@ -108,9 +130,8 @@
             body.classList.add('dark');
             themeToggle.checked = true;
         }
-    </script>
-<script>
-     // Mobile Menu Toggle
+        
+        // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -126,8 +147,8 @@
                 mobileMenu.classList.remove('active');
             });
         });
-  </script>
-   <script>
+    </script>
+    <script>
         const switch2 = document.getElementById('switch');
 
 switch2.addEventListener("click", () => {
@@ -136,4 +157,5 @@ switch2.addEventListener("click", () => {
     
     </script>
 </body>
+
 </html>

@@ -9,22 +9,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body class="light">
-  <!-- NAVBAR -->
-    <nav class="nav-container">
-
-        <img src="LogoStudentiks_pabg.png" alt=Logo" class="logo">
+ <!-- ==================== NAVBAR ==================== -->
+        <nav class="nav-container">
+        <!-- Logo -->
+        <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
             <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth Nesh</a>
+            <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
         
-        <!-- Desktop Auth Buttons & Theme Toggle -->
+        <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-        <a href="login.html"><button id="loginBtn">Login</button></a>
+            <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
             <!-- Theme Toggle -->
@@ -33,27 +34,31 @@
                 <span class="slider"></span>
             </label>
         </div>
+        
+        <!-- Hamburger Menu (Mobile Only) -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
             <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth Nesh</a>
+            <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
-            <a href="login.html"><button id="mobile-login-btn">Login</button></a>
-            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>            
+             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+            <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
-    </div>        
-    <!-- Hamburger Menu (Mobile Only) -->
-  <button class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-</nav>
+    </div>
   <main>
     <section class="page-hero">
         <h1>About Us</h1>

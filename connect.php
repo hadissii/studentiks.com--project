@@ -7,6 +7,6 @@ $db   = "studentiks";
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
-    die("Failed to connect to database: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>

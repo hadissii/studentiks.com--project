@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studenti-Ks - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
+
 <body class="light">
-     <!-- ==================== NAVBAR ==================== -->
-        <nav class="nav-container">
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="nav-container">
         <!-- Logo -->
         <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
-        
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
             <a href="index.html">Ballina</a>
@@ -21,28 +23,28 @@
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
         </div>
-        
+
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
-            
+            <a href="register.html"><button id="register-btn">Register</button></a>
+
             <!-- Theme Toggle -->
             <label class="switch">
                 <input type="checkbox" id="theme-toggle">
                 <span class="slider"></span>
             </label>
         </div>
-        
-        <!-- Hamburger Menu (Mobile Only) -->
+<images/>
+           <!-- Hamburger Menu (Mobile Only) -->
         <button class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </nav>
-    
+
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
@@ -52,10 +54,9 @@
             <a href="colleges.html">Fakultetet</a>
         </div>
         <div class="mobile-auth-buttons">
-             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
-             <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
+            <a href="register.html"><button id="register-btn">Register</button></a>
             <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
@@ -66,7 +67,7 @@
             <h1>Studenti-Ks</h1>
             <p>Find your perfect student accommodation and compatible roommates across Kosovo's universities.</p>
         </div>
-        
+
         <!-- Card Grid -->
         <div class="card-grid">
             <!-- Card 1 -->
@@ -82,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Card 2 -->
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -96,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Card 3 -->
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -112,20 +113,20 @@
             </div>
         </div>
     </main>
-    
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-bottom">
             <p>&copy; 2024 Studenti-Ks. All rights reserved.</p>
         </div>
     </footer>
-    
-        <script>
+
+    <script>
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        
-        themeToggle.addEventListener('change', function() {
+
+        themeToggle.addEventListener('change', function () {
             if (this.checked) {
                 body.classList.remove('light');
                 body.classList.add('dark');
@@ -136,7 +137,7 @@
                 localStorage.setItem('theme', 'light');
             }
         });
-        
+
         // Check saved theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         if (savedTheme === 'dark') {
@@ -144,16 +145,16 @@
             body.classList.add('dark');
             themeToggle.checked = true;
         }
-        
+
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        hamburger.addEventListener('click', function() {
+
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking links
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -162,13 +163,32 @@
             });
         });
     </script>
-     <script>
+    <script>
         const switch2 = document.getElementById('switch');
 
-switch2.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
-    
+        switch2.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+
+    </script>
+
+    <script>
+        const images = [
+            {
+                image:
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/250px-Black_colour.jpg",
+            },
+            {
+                image:
+                    "https://img.freepik.com/premium-photo/free-seamless-pattern-abstract-texture-geometric-vector-illustration-design-wallpaper-background_1226483-21619.jpg",
+            },
+            {
+                image:
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/250px-Black_colour.jpg",
+            }
+            ,
+        ]
     </script>
 </body>
+
 </html>

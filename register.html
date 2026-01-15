@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,7 +60,6 @@
         </div>
     </div>
 
-    
     <!-- ==================== MAIN CONTENT ==================== -->
     <main>
         <section>
@@ -157,6 +156,36 @@ switch2.addEventListener("click", () => {
 });
     
     </script>
-    <script src="script.js"></script>
+
+
+<script>
+document.getElementById("form-container").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("register.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.status === "success") {
+            window.location.href = "user.html"; 
+        } else {
+            document.getElementById("msg").textContent = data.message;
+            document.getElementById("msg").style.color = "red";
+        }
+
+    })
+    .catch(() => {
+        document.getElementById("msg").textContent = "An error occurred.";
+        document.getElementById("msg").style.color = "red";
+    });
+});
+</script>
+<script src="script.js"></script>
 </body>
 </html>
+->

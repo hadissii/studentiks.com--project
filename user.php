@@ -1,3 +1,37 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    header("Location: login.html"); 
+    exit();
+}
+
+$conn = new mysqli("localhost", "root", "", "studentiks");
+
+if ($conn->connect_error) {
+    die();
+}
+
+$id = $_SESSION['id'];
+$result = $conn->query("SELECT * FROM users WHERE id = $id");
+
+if (!$result || $result->num_rows === 0) {
+    session_destroy();
+    header("Location: login.html");
+    exit();
+}
+
+$user = $result->fetch_assoc();
+
+$displayName = "";
+if (!empty($user['name'])) {
+    $displayName = $user['name'];
+} elseif (!empty($user['firstname'])) {
+    $displayName = $user['firstname'] . " " . ($user['lastname'] ?? "");
+} else {
+    $displayName = "User";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,131 +41,90 @@
     <link rel="stylesheet" href="user.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<?php
-session_start();
-
-if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-$conn = new mysqli("localhost", "root", "", "studentiks");
-
-$id = $_SESSION['id'];
-$result = $conn->query("select * from users where id = $id");
-
-if ($result->num_rows === 0) {
-    session_destroy();
-    header("Location: login.php");
-    exit();
-}
-
-$user = $result->fetch_assoc();
-?>
-
-
 </head>
 <body>
     <div class="page-content">
-       <!-- ==================== NAVBAR ==================== -->
         <nav class="nav-container">
-        <!-- Logo -->
-        <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
-        
-        <!-- Desktop Navigation Links -->
-        <div class="nav-links">
-            <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth nesh</a>
-            <a href="contact.html">Kontakti</a>
-            <a href="colleges.html">Fakultetet</a>
-        </div>
-        
-        <!-- Desktop Auth Buttons -->
-        <div class="auth-buttons">
-            <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
-            <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
+            <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
             
-            <!-- Theme Toggle -->
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
-        
-        <!-- Hamburger Menu (Mobile Only) -->
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+            <div class="nav-links">
+                <a href="index.html">Ballina</a>
+                <a href="about.html">Rreth nesh</a>
+                <a href="contact.html">Kontakti</a>
+                <a href="colleges.html">Fakultetet</a>
+            </div>
+            
+            <div class="auth-buttons">
+                <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
+                <a href="login.html"><button id="loginBtn">Login</button></a>
+                <a href="register.html"><button id="register-btn">Register</button></a>
+                
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
     
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-links">
-            <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth nesh</a>
-            <a href="contact.html">Kontakti</a>
-            <a href="colleges.html">Fakultetet</a>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-links">
+                <a href="index.html">Ballina</a>
+                <a href="about.html">Rreth nesh</a>
+                <a href="contact.html">Kontakti</a>
+                <a href="colleges.html">Fakultetet</a>
+            </div>
+            <div class="mobile-auth-buttons">
+                 <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
+                <a href="login.html"><button id="loginBtn">Login</button></a>
+                <a href="register.html"><button id="register-btn">Register</button></a>
+                <i id="switch" class="fa-solid fa-moon"></i>
+            </div>
         </div>
-        <div class="mobile-auth-buttons">
-             <a href="user.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
-            <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
-            <!-- Theme Toggle -->
-            <i id="switch" class="fa-solid fa-moon"></i>
+
+        <div class="profile-container">
+            <div class="profile-left">
+                <img src="https://i.pravatar.cc/300" alt="Profile Photo">
+            </div>
+            <div class="profile-right">
+                <h2><?php echo strtoupper(htmlspecialchars($displayName)); ?></h2>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+                <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone'] ?? 'Nuk ka të dhëna'); ?></p>
+                <p>
+                    <strong>Status:</strong>
+                    <span class="status admin"><?php echo htmlspecialchars($user['role'] ?? 'Student'); ?></span> 
+                </p>
+            </div>
         </div>
+
+        <footer>
+             © 2025 Studenti-Ks. All rights reserved.
+        </footer>  
     </div>
 
-    <div class="profile-container">
-    <div class="profile-left">
-        <img src="https://i.pravatar.cc/300" alt="Profile Photo">
-    </div>
-<div class="profile-right">
-    <h2><?php echo strtoupper(htmlspecialchars($user['name'])); ?></h2>
-
-    <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
-
-    <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone']); ?></p>
-
-    <p>
-        <strong>Status:</strong>
-        <span class="status admin">Admin</span> 
-    </p>
-</div>
-</div>
-<footer>
-     © 2025 Studenti-Ks. All rights reserved.
-</footer>  
-    </div>
-
-   <script>
-     // Theme Toggle
+    <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
         
         themeToggle.addEventListener('change', function() {
             if (this.checked) {
-                body.classList.remove('light');
                 body.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
             } else {
                 body.classList.remove('dark');
-                body.classList.add('light');
                 localStorage.setItem('theme', 'light');
             }
         });
         
-        // Check saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
-            body.classList.remove('light');
             body.classList.add('dark');
             themeToggle.checked = true;
         }
         
-        // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -139,23 +132,13 @@ $user = $result->fetch_assoc();
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
-        
-        // Close mobile menu when clicking links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
-    <script>
-        const switch2 = document.getElementById('switch');
 
-switch2.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
-    
+        const switch2 = document.getElementById('switch');
+        if(switch2) {
+            switch2.addEventListener("click", () => {
+                document.body.classList.toggle("dark");
+            });
+        }
     </script>
 </body>
-
 </html>

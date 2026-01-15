@@ -11,25 +11,36 @@
 session_start();
 
 if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
+    header("Location: user.html"); 
     exit();
 }
 
 $conn = new mysqli("localhost", "root", "", "studentiks");
 
-$id = $_SESSION['id'];
-$result = $conn->query("select * from users where id = $id");
+if ($conn->connect_error) {
+    die();
+}
 
-if ($result->num_rows === 0) {
+$id = $_SESSION['id'];
+$result = $conn->query("SELECT * FROM users WHERE id = $id");
+
+if (!$result || $result->num_rows === 0) {
     session_destroy();
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 }
 
 $user = $result->fetch_assoc();
+
+$displayName = "";
+if (isset($user['name'])) {
+    $displayName = $user['name'];
+} elseif (isset($user['name'])) {
+    $displayName = $user['firstname'] . " " . ($user['lastname'] ?? "");
+} else {
+    $displayName = "User";
+}
 ?>
-
-
 </head>
 <body>
     <div class="page-content">
@@ -156,6 +167,25 @@ switch2.addEventListener("click", () => {
 });
     
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("get_user.php")
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.status === "success") {
+                document.getElementById("name").textContent = data.name;
+                document.getElementById("email").textContent = data.email;
+                document.getElementById("phone").textContent = data.phone;
+                document.getElementById("role").textContent = data.role;
+            } else {
+                window.location.href = "login.html"; 
+            }
+
+        });
+});
+</script>
+
 </body>
 
 </html>

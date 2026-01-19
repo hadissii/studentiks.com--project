@@ -1,37 +1,46 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['id'])) {
-    header("Location: login.html"); 
-    exit();
-}
-
 $conn = new mysqli("localhost", "root", "", "studentiks");
+if ($conn->connect_error) die("Connection failed");
 
-if ($conn->connect_error) {
-    die();
+// If form is submitted, save/update data
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name  = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+
+    // Optional: Save it to session so it persists
+    $_SESSION['form_data'] = [
+        'name'  => $name,
+        'email' => $email,
+        'phone' => $phone
+    ];
 }
 
-$id = $_SESSION['id'];
-$result = $conn->query("SELECT * FROM users WHERE id = $id");
+$userData = $_SESSION['form_data'] ?? null;
 
-if (!$result || $result->num_rows === 0) {
-    session_destroy();
-    header("Location: login.html");
-    exit();
+// If the user is logged in, fetch database info
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    $result = $conn->query("SELECT * FROM users WHERE id = $id");
+    if ($result && $result->num_rows > 0) {
+        $dbUser = $result->fetch_assoc();
+        $userData = $userData ?? $dbUser;
+    }
 }
 
-$user = $result->fetch_assoc();
+// Default fallback
+$userData = $userData ?? [
+    'name' => 'User',
+    'email' => 'Nuk ka të dhëna',
+    'phone' => 'Nuk ka të dhëna',
+    'role' => 'Student'
+];
 
-$displayName = "";
-if (!empty($user['name'])) {
-    $displayName = $user['name'];
-} elseif (!empty($user['firstname'])) {
-    $displayName = $user['firstname'] . " " . ($user['lastname'] ?? "");
-} else {
-    $displayName = "User";
-}
+// Prepare display name
+$displayName = !empty($userData['name']) ? $userData['name'] : ($userData['firstname'] ?? 'User');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -20,6 +20,7 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
@@ -50,6 +51,7 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         <div class="mobile-auth-buttons">
              <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
@@ -169,8 +171,8 @@ loginForm.addEventListener('submit', (e) => {
             const data = JSON.parse(rawText);
             
             if (data.status === "success") {
-                // SUCCESS: Redirect to the PHP profile page
-                window.location.href = "user.php";
+                // SUCCESS: Redirect to dashboard
+                window.location.href = "dashboard.php";
             } else {
                 // FAILURE: Show the specific error (e.g., "Wrong password")
                 alert(data.message);

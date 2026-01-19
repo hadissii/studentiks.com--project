@@ -7,42 +7,8 @@
     <link rel="stylesheet" href="user.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<?php
-session_start();
-
-if (!isset($_SESSION['id'])) {
-    header("Location: user.html"); 
-    exit();
-}
-
-$conn = new mysqli("localhost", "root", "", "studentiks");
-
-if ($conn->connect_error) {
-    die();
-}
-
-$id = $_SESSION['id'];
-$result = $conn->query("SELECT * FROM users WHERE id = $id");
-
-if (!$result || $result->num_rows === 0) {
-    session_destroy();
-    header("Location: login.html");
-    exit();
-}
-
-$user = $result->fetch_assoc();
-
-$displayName = "";
-if (isset($user['name'])) {
-    $displayName = $user['name'];
-} elseif (isset($user['name'])) {
-    $displayName = $user['firstname'] . " " . ($user['lastname'] ?? "");
-} else {
-    $displayName = "User";
-}
-?>
-</head>
-<body>
+    </head>
+    <body>
     <div class="page-content">
        <!-- ==================== NAVBAR ==================== -->
         <nav class="nav-container">
@@ -55,11 +21,12 @@ if (isset($user['name'])) {
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-            <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
@@ -85,9 +52,10 @@ if (isset($user['name'])) {
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         <div class="mobile-auth-buttons">
-             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+             <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             <!-- Theme Toggle -->
@@ -100,15 +68,15 @@ if (isset($user['name'])) {
         <img src="https://i.pravatar.cc/300" alt="Profile Photo">
     </div>
 <div class="profile-right">
-    <h2><?php echo strtoupper(htmlspecialchars($user['name'])); ?></h2>
+    <h2 id="name">Loading...</h2>
 
-    <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+    <p><strong>Email:</strong> <span id="email">Loading...</span></p>
 
-    <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone']); ?></p>
+    <p><strong>Phone:</strong> <span id="phone">Loading...</span></p>
 
     <p>
         <strong>Status:</strong>
-        <span class="status admin">Admin</span> 
+        <span class="status admin" id="role">Student</span> 
     </p>
 </div>
 </div>
@@ -172,16 +140,25 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("get_user.php")
         .then(res => res.json())
         .then(data => {
-
             if (data.status === "success") {
-                document.getElementById("name").textContent = data.name;
-                document.getElementById("email").textContent = data.email;
-                document.getElementById("phone").textContent = data.phone;
-                document.getElementById("role").textContent = data.role;
+                // Display user data
+                const nameElement = document.getElementById("name");
+                const emailElement = document.getElementById("email");
+                const phoneElement = document.getElementById("phone");
+                const roleElement = document.getElementById("role");
+                
+                if (nameElement) nameElement.textContent = data.name ? data.name.toUpperCase() : "User";
+                if (emailElement) emailElement.textContent = data.email || "Nuk ka të dhëna";
+                if (phoneElement) phoneElement.textContent = data.phone || "Nuk ka të dhëna";
+                if (roleElement) roleElement.textContent = data.role || "Student";
             } else {
+                // Redirect to login if not authenticated
                 window.location.href = "login.html"; 
             }
-
+        })
+        .catch(err => {
+            console.error("Error fetching user data:", err);
+            window.location.href = "login.html";
         });
 });
 </script>

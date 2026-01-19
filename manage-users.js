@@ -1,29 +1,61 @@
 function loadUsers() {
-    fetch("get_user.php")
+    fetch("get_all_users.php")
         .then(res => res.json())
         .then(data => {
+            if (data.status === "error") {
+                alert(data.message);
+                if (data.message.includes("Access denied") || data.message.includes("Not logged in")) {
+                    window.location.href = "login.html";
+                }
+                return;
+            }
+            
             const tbody = document.querySelector("#users-table tbody");
             tbody.innerHTML = "";
 
-            data.forEach(user => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${user.id}</td>
-                        <td>${user.emri}</td>
-                        <td>${user.email}</td>
-                        <td>${user.phone}</td>
-                        <td>${user.role}</td>
-                        <td>
-                            <button class="action-btn edit-btn" onclick="openEdit(${user.id}, '${user.emri}', '${user.email}', '${user.phone}', '${user.role}')">Edit</button>
-                            <button class="action-btn delete-btn" onclick="deleteUser(${user.id})">Delete</button>
-                        </td>
-                    </tr>
-                `;
-            });
+            if (data.users && data.users.length > 0) {
+                data.users.forEach(user => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name || 'N/A'}</td>
+                            <td>${user.email || 'N/A'}</td>
+                            <td>${user.phone || 'N/A'}</td>
+                            <td>${user.role || 'user'}</td>
+                            <td>
+                                <button class="action-btn edit-btn" onclick="openEdit(${user.id}, '${(user.name || '').replace(/'/g, "\\'")}', '${(user.email || '').replace(/'/g, "\\'")}', '${(user.phone || '').replace(/'/g, "\\'")}', '${user.role || 'user'}')">Edit</button>
+                                <button class="action-btn delete-btn" onclick="deleteUser(${user.id})">Delete</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                tbody.innerHTML = "<tr><td colspan='6' style='text-align: center;'>No users found</td></tr>";
+            }
+        })
+        .catch(err => {
+            console.error("Error loading users:", err);
+            alert("Error loading users. Please try again.");
         });
 }
 
-loadUsers();
+// Check authentication on page load
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("get_user.php")
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "error" || data.role !== "admin") {
+                alert("Access denied. Admin only.");
+                window.location.href = "login.html";
+            } else {
+                loadUsers();
+            }
+        })
+        .catch(err => {
+            console.error("Auth check error:", err);
+            window.location.href = "login.html";
+        });
+});
 
 function deleteUser(id) {
     if (!confirm("Are you sure you want to delete this user?")) return;

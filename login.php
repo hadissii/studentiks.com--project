@@ -1,53 +1,33 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
+include 'connect.php';
 
-header("Content-Type: application/json");
+header('Content-Type: application/json');
 
-$conn = new mysqli("localhost", "root", "", "studentiks");
-if ($conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+
+if (!$email || !$password) {
+    echo json_encode(["status" => "error", "message" => "Please fill all fields"]);
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    if (empty($_POST['email']) || empty($_POST['password'])) {
-        echo json_encode(["status" => "error", "message" => "Please fill all fields"]);
-        exit();
+$result = $conn->query("SELECT * FROM users WHERE email='$email'");
+if ($result && $result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    if (password_verify($password, $user['password'])) {
+        // Save user ID and all user data in session
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['phone'] = $user['phone'];
+        $_SESSION['role'] = $user['role'] ?? 'user'; // Get role from database
+        echo json_encode(["status" => "success"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Wrong password"]);
     }
-
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-
-    $stmt = $conn->prepare("SELECT id, name, email, password, role FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows === 1) {
-
-        $stmt->bind_result($id, $name, $emailDB, $hashedPassword, $role);
-        $stmt->fetch();
-
-        if (password_verify($password, $hashedPassword)) {
-
-            $_SESSION['id'] = $id;
-            $_SESSION['name'] = $name;
-            $_SESSION['email'] = $emailDB;
-            $_SESSION['role'] = $role;
-
-            echo json_encode(["status" => "success"]);
-            exit();
-        }
-    }
-
-    echo json_encode(["status" => "error", "message" => "Invalid email or password"]);
-    exit();
+} else {
+    echo json_encode(["status" => "error", "message" => "User not found"]);
 }
-
-echo json_encode(["status" => "error", "message" => "Invalid request"]);
 exit();
+?>

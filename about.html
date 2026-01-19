@@ -20,11 +20,12 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
         <div class="auth-buttons">
-            <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             
@@ -50,38 +51,156 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         <div class="mobile-auth-buttons">
-             <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
+             <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
             <!-- Theme Toggle -->
             <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
-  <main>
-    <section class="page-hero">
-        <h1>About Us</h1>
-        <p>Your bridge to better student living in Kosovo.</p>
+  <main class="about-main">
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Rreth Nesh</h1>
+            <p class="hero-subtitle">Ura juaj për jetën më të mirë të studentit në Kosovë</p>
+        </div>
     </section>
 
-    <section class="about-layout">
-        <div class="about-content">
-          <h2>Simplifying Student Life</h2>
-          <p>
-            Studenti-Ks was built by students, for students. We know how hard it is to find 
-            affordable housing and trustworthy roommates while balancing university life.
-          </p>
-          <p>
-            Our mission is to create a digital space where every student in Kosovo 
-            can find a place that feels like home.
-          </p>
+    <!-- Mission Section -->
+    <section class="about-section">
+        <div class="section-header">
+            <h2>Misioni Ynë</h2>
+            <div class="underline"></div>
         </div>
+        <div class="content-card">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <p class="large-text">
+                Studenti-Ks u krijua nga studentët, për studentët. Ne e dimë sa e vështirë është të gjesh 
+                strehim të përballueshëm dhe shokë dhome të besueshëm ndërsa balancon jetën universitaire.
+            </p>
+            <p>
+                Misioni ynë është të krijojmë një hapësirë dixhitale ku çdo student në Kosovë 
+                mund të gjejë një vend që ndihet si shtëpi.
+            </p>
+        </div>
+    </section>
 
-        <div class="about-glass-card">
-          <h3>The Vision</h3>
-          <p>To become the most trusted network for students moving to the city for their education.</p>
-          <div class="highlight">Est. 2025</div>
+    <!-- Vision Section -->
+    <section class="about-section dark-section">
+        <div class="section-header">
+            <h2>Vizioni Ynë</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="vision-card">
+            <div class="vision-icon">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3>Të bëhemi rrjeti më i besueshëm</h3>
+            <p>Për studentët që lëvizin në qytet për arsimimin e tyre</p>
+            <div class="highlight-badge">
+                <i class="fa-solid fa-calendar"></i>
+                <span>E themeluar në 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="about-section">
+        <div class="section-header">
+            <h2>Vlerat Tona</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3>Bashkësi</h3>
+                <p>Ne ndërtojmë një komunitet ku studentët ndihen të sigurt dhe të mirëpritur</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Besueshmëri</h3>
+                <p>Sigurojmë që çdo listim dhe përdorues të jetë i verifikuar dhe i sigurt</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Ndihmë</h3>
+                <p>Ofrojmë mbështetje 24/7 për të gjitha pyetjet dhe shqetësimet tuaja</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h3>Inovacion</h3>
+                <p>Përdorim teknologjinë më të fundit për të bërë procesin më të lehtë</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="about-section stats-section">
+        <div class="section-header">
+            <h2>Numrat Tanë</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-target="1000">0</div>
+                <div class="stat-label">Studentë të Regjistruar</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Strehime të Disponueshme</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Universitetet e Mbuluara</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Shokë Dhome të Gjetur</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="about-section dark-section">
+        <div class="section-header">
+            <h2>Pse Na Zgjedhni?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h4>Gjeografikisht i Përshtatshëm</h4>
+                <p>Gjeni strehime afër kampusit tuaj</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-users-line"></i>
+                <h4>Përputhje e Shokëve të Dhomës</h4>
+                <p>Algoritëm inteligjent për gjetjen e shokëve të duhur</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-wallet"></i>
+                <h4>Çmime të Përballueshme</h4>
+                <p>Oferta për çdo buxhet studentor</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-clock"></i>
+                <h4>24/7 Mbështetje</h4>
+                <p>Jemi këtu për ju në çdo kohë</p>
+            </div>
         </div>
     </section>
 </main>
@@ -146,9 +265,51 @@ switch2.addEventListener("click", () => {
 });
     
     </script>
+    <script>
+        // Animated counter for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
 
-  
-  
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for stats animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        if (!stat.classList.contains('animated')) {
+                            stat.classList.add('animated');
+                            animateCounter(stat);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe stats section
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
 

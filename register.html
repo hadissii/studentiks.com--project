@@ -1,4 +1,4 @@
-<-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,7 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         
         <!-- Desktop Auth Buttons -->
@@ -50,6 +51,7 @@
             <a href="about.html">Rreth nesh</a>
             <a href="contact.html">Kontakti</a>
             <a href="colleges.html">Fakultetet</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
         <div class="mobile-auth-buttons">
              <a href="user.html"><i class="fa-solid fa-user" id="fa-user"></i></a>
@@ -67,7 +69,8 @@
             <p class="title" >Join students across Kosovo who are finding the perfect homes and compatible roommates.</p>
             
             <div class="form-container">
-                <form id="signup-form" action="register.php" method="post">
+                <div id="msg"></div>
+                <form id="signup-form">
                     <div class="form-group">
                         <label for="full-name">Full Name</label>
                         <input type="text" id="full-name" placeholder="Enter your full name" name="name" required>
@@ -159,8 +162,18 @@ switch2.addEventListener("click", () => {
 
 
 <script>
-document.getElementById("form-container").addEventListener("submit", function(e) {
+document.getElementById("signup-form").addEventListener("submit", function(e) {
     e.preventDefault();
+
+    // Validate password match
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+
+    if (password !== confirmPassword) {
+        document.getElementById("msg").textContent = "Passwords do not match!";
+        document.getElementById("msg").style.color = "red";
+        return;
+    }
 
     const formData = new FormData(this);
 
@@ -170,17 +183,17 @@ document.getElementById("form-container").addEventListener("submit", function(e)
     })
     .then(res => res.json())
     .then(data => {
-
         if (data.status === "success") {
-            window.location.href = "user.html"; 
+            // Redirect to dashboard on successful registration
+            window.location.href = "dashboard.php"; 
         } else {
-            document.getElementById("msg").textContent = data.message;
+            document.getElementById("msg").textContent = data.message || "An error occurred.";
             document.getElementById("msg").style.color = "red";
         }
-
     })
-    .catch(() => {
-        document.getElementById("msg").textContent = "An error occurred.";
+    .catch(err => {
+        console.error("Fetch error:", err);
+        document.getElementById("msg").textContent = "An error occurred. Please try again.";
         document.getElementById("msg").style.color = "red";
     });
 });
@@ -188,4 +201,3 @@ document.getElementById("form-container").addEventListener("submit", function(e)
 <script src="script.js"></script>
 </body>
 </html>
-->

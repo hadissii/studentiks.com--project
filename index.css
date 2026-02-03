@@ -2,7 +2,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
@@ -80,6 +81,9 @@ body.dark .nav-container {
   position: relative;
   transition: color 0.3s ease;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 body.dark .nav-links a { color: #cbd5e0; }
@@ -251,7 +255,6 @@ body.dark #switch:hover {
   transition: all 0.3s ease;
 }
 
-
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px,8px); }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(20px); }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px,-7px); }
@@ -339,43 +342,83 @@ body.dark .mobile-menu-links a {
 }
 
 /* ==================== 3. Hero Section ==================== */
+
+/* ===== SLIDER STYLES (kept here so it works instantly) ===== */
+.image-slider {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
 main.hero {
-  flex: 1;
-  padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background: url('blurred-background-vibrant-campus-scene-600nw-2527446029.webp') no-repeat center center/cover;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: url('blurred-background-vibrant-campus-scene-600nw-2527446029.webp') no-repeat center center/cover;
 }
 
 .hero-content {
-  text-align: center;
-  max-width: 800px;
-  padding: 60px 20px;
+    position: absolute;  
+    top: 50%;           
+    left: 50%;           
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 10;         
+    margin-top: 0;      
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  /*background: linear-gradient(135deg, #033151);*/
-  color: black;
-  background-clip: text;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: black;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  color:black;
-  border-radius: 50px;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.2rem;
+    color: black;
+    border-radius: 50px;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-body.dark .hero-content p { color:black; }
+body.dark .hero-content p { color: black; }
 
 /* ==================== 4. Card Grid ==================== */
 .card-grid {

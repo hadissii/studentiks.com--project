@@ -353,15 +353,14 @@ body.dark .mobile-menu-links a {
 
 /* Main container below navbar */
 .colleges-container {
-  margin-top: 100px; /* leave space for fixed navbar */
+  margin-top: 100px; 
   padding: 40px 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   text-decoration: none;
 }
 
-/* College card */
 .college-card {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
@@ -369,36 +368,34 @@ body.dark .mobile-menu-links a {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  height: 100%; 
 }
 
-/* Dark mode support */
 body.dark .college-card {
   background: rgba(34, 34, 34, 0.9);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  text-decoration: none;
 }
 
-/* College image */
 .college-card img {
   width: 100%;
-  height: 180px;
-  rotate: (0deg);
+  height: 200px;
   object-fit: cover;
+  display: block;
 }
 
-/* College info */
 .college-card .college-info {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  rotate: (0deg);
+  gap: 12px;
+  flex-grow: 1;
 }
 
 .college-card .college-info h3 {
   font-size: 20px;
   font-weight: 700;
   color: #2652c0;
+  margin: 0;
 }
 
 body.dark .college-card .college-info h3 {
@@ -408,19 +405,20 @@ body.dark .college-card .college-info h3 {
 .college-card .college-info p {
   font-size: 16px;
   color: #4a5568;
+  margin: 0;
+  line-height: 1.5;
 }
 
 body.dark .college-card .college-info p {
   color: #cbd5e0;
 }
 
-/* Button inside card */
 .college-card .college-info a {
-  margin-top: 10px;
+  margin-top: auto; 
   align-self: start;
   text-decoration: none;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
   color: #fff;

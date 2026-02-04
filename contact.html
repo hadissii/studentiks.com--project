@@ -39,10 +39,7 @@
         Fakultetet
     </a>
 
-    <a href="dashboard.php" class="active">
-        <i class="fa-solid fa-chart-line"></i>
-        Dashboard
-    </a>
+    
 </div>
 
 
@@ -88,11 +85,25 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
-            <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth nesh</a>
-            <a href="contact.html">Kontakti</a>
-            <a href="colleges.html">Fakultetet</a>
-            <a href="dashboard.php">Dashboard</a>
+            <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Ballina
+    </a>
+
+    <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i>
+        Rreth nesh
+    </a>
+
+    <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i>
+        Kontakti
+    </a>
+
+    <a href="colleges.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Fakultetet
+    </a>
         </div>
         <div class="mobile-auth-buttons">
              <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
@@ -131,107 +142,100 @@
     </footer>
 
   <script>
-     // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                body.classList.remove('light');
-                body.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark');
-                body.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-        
-        // Check saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            body.classList.remove('light');
-            body.classList.add('dark');
-            themeToggle.checked = true;
-        }
-    </script>
-<script>
-     // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-  </script>
-   <script>
-        const switch2 = document.getElementById('switch');
+    const themeToggle = document.getElementById('theme-toggle');
+const switch2 = document.getElementById('switch');
+const body = document.body;
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const contactForm = document.getElementById('contact-form');
 
-switch2.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
-    
-    </script>
-    <script>
-        // Contact Form Submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const messageDiv = document.getElementById('contact-message');
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.textContent;
-            
-            // Get form values
-            const formData = new FormData(this);
-            
-            // Disable button and show loading
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            messageDiv.style.display = 'none';
-            
-            // Send to PHP
-            fetch('contact.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    messageDiv.style.display = 'block';
-                    messageDiv.style.background = '#4caf50';
-                    messageDiv.style.color = 'white';
-                    messageDiv.textContent = 'Message sent successfully! We will get back to you soon.';
-                    
-                    // Reset form
-                    this.reset();
-                } else {
-                    messageDiv.style.display = 'block';
-                    messageDiv.style.background = '#f44336';
-                    messageDiv.style.color = 'white';
-                    messageDiv.textContent = data.message || 'Error sending message. Please try again.';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                messageDiv.style.display = 'block';
-                messageDiv.style.background = '#f44336';
-                messageDiv.style.color = 'white';
-                messageDiv.textContent = 'Error sending message. Please try again later.';
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            });
+function updateTheme(isDark) {
+    if (isDark) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        if (themeToggle) themeToggle.checked = true;
+    } else {
+        body.classList.remove('dark');
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+        if (themeToggle) themeToggle.checked = false;
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('change', function() {
+        updateTheme(this.checked);
+    });
+}
+
+if (switch2) {
+    switch2.addEventListener('click', function() {
+        const isCurrentlyDark = body.classList.contains('dark');
+        updateTheme(!isCurrentlyDark);
+    });
+}
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+updateTheme(savedTheme === 'dark');
+
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
         });
+    });
+}
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const messageDiv = document.getElementById('contact-message');
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.textContent;
+        const formData = new FormData(this);
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        messageDiv.style.display = 'none';
+        
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            messageDiv.style.display = 'block';
+            if (data.status === 'success') {
+                messageDiv.style.backgroundColor = '#4caf50';
+                messageDiv.style.color = '#ffffff';
+                messageDiv.textContent = 'Message sent successfully! We will get back to you soon.';
+                this.reset();
+            } else {
+                messageDiv.style.backgroundColor = '#f44336';
+                messageDiv.style.color = '#ffffff';
+                messageDiv.textContent = data.message || 'Error sending message. Please try again.';
+            }
+        })
+        .catch(error => {
+            messageDiv.style.display = 'block';
+            messageDiv.style.backgroundColor = '#f44336';
+            messageDiv.style.color = '#ffffff';
+            messageDiv.textContent = 'Error sending message. Please try again later.';
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        });
+    });
+}
     </script>
 </body>
 </html>

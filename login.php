@@ -4,24 +4,29 @@ include 'connect.php';
 
 header('Content-Type: application/json');
 
-$email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
 
 if (!$email || !$password) {
     echo json_encode(["status" => "error", "message" => "Please fill all fields"]);
     exit();
 }
 
-$result = $conn->query("SELECT * FROM users WHERE email='$email'");
+$stmt = $conn->prepare("SELECT id, name, email, phone, role, password FROM users WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
 if ($result && $result->num_rows > 0) {
     $user = $result->fetch_assoc();
+    
     if (password_verify($password, $user['password'])) {
-        // Save user ID and all user data in session
         $_SESSION['id'] = $user['id'];
         $_SESSION['name'] = $user['name'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['phone'] = $user['phone'];
-        $_SESSION['role'] = $user['role'] ?? 'user'; // Get role from database
+        $_SESSION['role'] = isset($user['role']) ? $user['role'] : 'user';
+        
         echo json_encode(["status" => "success"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Wrong password"]);
@@ -29,5 +34,8 @@ if ($result && $result->num_rows > 0) {
 } else {
     echo json_encode(["status" => "error", "message" => "User not found"]);
 }
+
+$stmt->close();
+$conn->close();
 exit();
 ?>

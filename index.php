@@ -9,52 +9,59 @@
 </head>
 <body class="light">
       <!-- NAVBAR -->
-    <nav class="nav-container">
-        <!-- Logo -->
-        <img src="LogoStudentiks_pabg.png" alt="Fakultetist Logo" class="logo">
-        
-        <!-- Desktop Navigation Links -->
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">Rreth Nesh</a>
-            <a href="contact.html">Kontakti</a>
-            <a href="colleges.html">Fakultetet</a>
-        </div>
-        
-        <!-- Desktop Auth Buttons -->
-        <div class="auth-buttons">
-        <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
-            
-            <!-- Theme Toggle -->
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
-        
-        <!-- Hamburger Menu (Mobile Only) -->
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-links">
-            <a href="index.html">Ballina</a>
-            <a href="about.html">Rreth Nesh</a>
-            <a href="contact.html">Kontakti</a>
-            <a href="colleges.html">Fakultetet</a>
-        </div>
-        <div class="mobile-auth-buttons">
-            <a href="login.html"><button id="mobile-login-btn">Login</button></a>
-            <a href="register.html"><button id="mobile-register-btn">Create Your Account</button></a>
-            <i id="switch" class="fa-solid fa-moon"></i>
-        </div>
+   <!-- ==================== NAVBAR ==================== -->
+<nav class="nav-container">
+    <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
+
+    <div class="nav-links">
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Ballina
+    </a>
+
+    <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i>
+        Rreth nesh
+    </a>
+
+    <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i>
+        Kontakti
+    </a>
+
+    <a href="colleges.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Fakultetet
+    </a>
+</div>
+
+
+    <div class="auth-buttons">
+        <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
+        <a href="login.html"><button>Login</button></a>
+        <a href="register.html"><button>Register</button></a>
+
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
     </div>
+
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- ==================== MOBILE MENU ==================== -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Ballina</a>
+    <a href="about.html">Rreth nesh</a>
+    <a href="contact.html">Kontakti</a>
+    <a href="colleges.html">Fakultetet</a>
+    <a href="dashboard.php">Dashboard</a>
+</div>
     
     
     <!-- MAIN CONTENT -->

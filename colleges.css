@@ -25,6 +25,16 @@ body {
   overflow-x: hidden;
 }
 
+body.light { 
+  background: white;
+  color: #121212; 
+}
+
+body.dark {
+  background: #121212;
+  color: white; 
+}
+
 body::before {
   content: "";
   position: fixed; 
@@ -47,6 +57,7 @@ body::before {
 /* ==================== 2. Navbar ==================== */
 .nav-container {
   position: fixed;
+  background-color: #121212;
   top: 0;
   left: 0;
   width: 100%;
@@ -59,16 +70,19 @@ body::before {
 }
 
 body.light .nav-container {
-  background: #fff;
+  background-color: white;
+  color: #4a5568;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   border-bottom: 1px solid #eaeaea;
 }
 
 body.dark .nav-container {
-  background: #222;
+  background-color: #121212;
+  color: #4a5568;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   border-bottom: 1px solid #333;
 }
+
 
 /* Logo / Brand */
 .brand {
@@ -76,7 +90,6 @@ body.dark .nav-container {
   font-weight: 800;
   background: linear-gradient(135deg, #2652c0, #1ee9c0);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-right: 40px;
 }
@@ -124,10 +137,13 @@ body.dark #switch {
   color: white;
 }
 
-body.dark .nav-links a { color: #cbd5e0; }
+.nav-links a:hover { 
+  color: #2652c0; 
+}
 
-.nav-links a:hover { color: #2652c0; }
-body.dark .nav-links a:hover { color: #a3bffa; }
+body.dark .nav-links a:hover { 
+  color: #a3bffa; 
+}
 
 /* Underline Hover Effect */
 .nav-links a::after {
@@ -170,6 +186,7 @@ body.dark .nav-links a:hover { color: #a3bffa; }
 }
 
 body.dark #login-btn {
+  background-color: #1ee9c0;
   color: #a3bffa;
   border-color: #a3bffa;
 }
@@ -180,7 +197,7 @@ body.dark #login-btn {
 }
 
 #register-btn {
-  background: linear-gradient(to right, #2652c0, #1ee9c0);
+  background-color: linear-gradient(to right, #2652c0, #1ee9c0);
   color: white;
   box-shadow: 0 4px 12px rgba(38, 82, 192, 0.3);
 }
@@ -200,7 +217,11 @@ body.dark #login-btn {
   margin-left: 15px;
 }
 
-.switch input { opacity: 0; width: 0; height: 0; }
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0; 
+}
 
 .slider {
   --background: #28096b;
@@ -287,11 +308,12 @@ input:checked + .slider:before {
 }
 
 body.dark .mobile-menu {
-  background: #222;
   box-shadow: -5px 0 15px rgba(0,0,0,0.3);
 }
 
-.mobile-menu.active { right: 0; }
+.mobile-menu.active { 
+  right: 0; 
+}
 
 .mobile-menu-links {
   display: flex;
@@ -302,19 +324,18 @@ body.dark .mobile-menu {
 .mobile-menu-links a {
   font-size: 20px;
   font-weight: 500;
-  color: #4a5568;
+  color: white;
   text-decoration: none;
   padding: 12px 0;
   border-bottom: 1px solid #eaeaea;
   transition: color 0.3s ease;
 }
-
-body.dark .mobile-menu-links a {
-  color: #cbd5e0;
-  border-bottom-color: #333;
+body.dark .nav-links a{
+  color: #4a5568;
 }
-
-.mobile-menu-links a:hover { color: #2652c0; }
+.mobile-menu-links a:hover { 
+  color: #2652c0; 
+}
 
 .mobile-auth-buttons {
   display: flex;

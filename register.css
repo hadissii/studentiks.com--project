@@ -38,16 +38,16 @@ body.dark {
   box-sizing: border-box;
 }
 
-body.light .nav-container { 
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid #eaeaea;
+body.light .nav-container {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-body.dark .nav-container { 
-  background: #222222;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #333333;
+body.dark .nav-container {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-bottom: 1px solid #333;
 }
 
 .logo {

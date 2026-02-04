@@ -22,13 +22,13 @@ body {
 }
 
 body.light { 
-  background: #f0f2ff;
-  color: #333; 
+  background-color: white;
+  color: #121212; 
 }
 
 body.dark {
-  background: #121212;
-  color: #e0e0e0; 
+  background-color: #121212;
+  color: white; 
 }
 
 /* Main content wrapper */
@@ -73,13 +73,15 @@ section {
 
 
 body.light .nav-container {
-  background: #fff;
+  background-color: white;
+  color: #121212;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   border-bottom: 1px solid #eaeaea;
 }
 
 body.dark .nav-container {
-  background: #222;
+  background-color: #121212;
+  color: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   border-bottom: 1px solid #333;
 }
@@ -115,10 +117,14 @@ body.dark .nav-container {
   white-space: nowrap;
 }
 
-body.dark .nav-links a { color: #cbd5e0; }
+.nav-links a:hover { 
+  color: #2652c0; 
+}
 
-.nav-links a:hover { color: #2652c0; }
-body.dark .nav-links a:hover { color: #a3bffa; }
+body.dark .nav-links a:hover { 
+  color: #a3bffa; 
+}
+
 
 /* Underline Hover Effect */
 .nav-links a::after {
@@ -133,7 +139,9 @@ body.dark .nav-links a:hover { color: #a3bffa; }
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover::after { 
+  width: 100%; 
+}
 
 /* Auth Buttons */
 .auth-buttons {
@@ -238,7 +246,7 @@ input:checked + .slider:before {
   box-shadow: inset 15px -4px 0px 15px #fff000;
 }
 
-/* Hamburger Menu - Hidden on desktop */
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -336,10 +344,11 @@ body.dark .mobile-menu {
 
 .mobile-menu.active {
   right: 0;
+  
 }
 
 .mobile-menu-links {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   gap: 25px;
 }
@@ -557,6 +566,10 @@ footer {
 
 
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
   h1 {
     font-size: 2.9rem;
   }

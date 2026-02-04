@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <span class="brand">Studenti-Ks</span>
+        </div>
+        <nav class="admin-menu">
+            <a href="#" class="menu-item active">Dashboard</a>
+            <a href="#" class="menu-item">Menaxho Përdoruesit</a>
+            <a href="#" class="menu-item">Kërkesat për Akomodim</a>
+            <a href="#" class="menu-item">Raportet</a>
+            <a href="#" class="menu-item">Cilësimet</a>
+        </nav>
+        <div class="admin-logout">
+            <a href="logout.php">Dil nga sistemi</a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-search">
+                <input type="text" placeholder="Kërko këtu...">
+            </div>
+            <div class="header-profile">
+                <span>Admin</span>
+                <div class="profile-img"></div>
+            </div>
+        </header>
+
+        <section class="admin-stats">
+            <div class="stat-box">
+                <h4>Total Përdorues</h4>
+                <p>1,452</p>
+                <span class="stat-trend">+12% këtë muaj</span>
+            </div>
+            <div class="stat-box">
+                <h4>Akomodime Aktive</h4>
+                <p>84</p>
+            </div>
+            <div class="stat-box">
+                <h4>Mesazhe të Reja</h4>
+                <p>23</p>
+            </div>
+        </section>
+
+        <section class="admin-table-section">
+            <div class="table-header">
+                <h2>Përdoruesit e Fundit</h2>
+                <button class="add-btn">Shto Përdorues</button>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Emri</th>
+                        <th>Email</th>
+                        <th>Roli</th>
+                        <th>Statusi</th>
+                        <th>Veprimet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Filan Fisteku</td>
+                        <td>filan@ubt-uni.net</td>
+                        <td>Student</td>
+                        <td><span class="status-active">Aktiv</span></td>
+                        <td><button class="edit-btn">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+</body>
+</html>

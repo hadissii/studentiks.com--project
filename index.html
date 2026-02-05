@@ -8,8 +8,11 @@
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
-    <!-- Main CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+<!-- Main CSS -->
     <link rel="stylesheet" href="index.css">
 
 </head>
@@ -17,11 +20,40 @@
 <body class="light">
 
 <!-- ==================== NAVBAR ==================== -->
-<nav class="nav-container">
-    <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
+ <nav class="nav-container">
+  <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
 
-    <div class="nav-links">
-    <a href="index.html">
+ 
+  
+
+  <div class="nav-links" id="nav-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Ballina</a>
+    <a href="about.html"><i class="fa-solid fa-circle-info"></i> Rreth nesh</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakti</a>
+    <a href="colleges.html"><i class="fa-solid fa-graduation-cap"></i> Fakultetet</a>
+  </div>
+
+  <div class="auth-buttons" id="auth-buttons">
+    <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
+    <a href="login.html"><button>Login</button></a>
+    <a href="register.html"><button>Register</button></a>
+
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+   <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="index.html">
         <i class="fa-solid fa-house"></i>
         Ballina
     </a>
@@ -40,59 +72,14 @@
         <i class="fa-solid fa-graduation-cap"></i>
         Fakultetet
     </a>
-</div>
-
-
-    <div class="auth-buttons">
-        <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
-        <a href="login.html"><button>Login</button></a>
-        <a href="register.html"><button>Register</button></a>
-
-        <label class="switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
+        </div>
+        <div class="mobile-auth-buttons">
+             <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
+            <a href="login.html"><button id="loginBtn">Login</button></a>
+        <a href="register.html"><button id="register-btn">Register</button></a>
+        </div>
     </div>
-
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
 </nav>
-
-<!-- ==================== MOBILE MENU ==================== -->
-<div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">
-        <i class="fa-solid fa-house"></i>
-        Ballina
-    </a>
-
-    <a href="about.html">
-        <i class="fa-solid fa-circle-info"></i>
-        Rreth nesh
-    </a>
-
-    <a href="contact.html">
-        <i class="fa-solid fa-envelope"></i>
-        Kontakti
-    </a>
-
-    <a href="colleges.html">
-        <i class="fa-solid fa-graduation-cap"></i>
-        Fakultetet
-    </a>
-
-     <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
-        <a href="login.html"><button>Login</button></a>
-        <a href="register.html"><button>Register</button></a>
-
-        <label class="switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
-</div>
-
 <!-- ==================== MAIN ==================== -->
 <main class="hero">
 
@@ -107,52 +94,6 @@
         <h1>Studenti-Ks</h1>
         <p>Find your perfect student accommodation and compatible roommates across Kosovo's universities.</p>
     </div>
-
-    <!-- CARD GRID -->
-    <div class="card-grid">
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Student Housing</h3>
-                    <p>Find affordable and comfortable housing near your campus</p>
-                </div>
-                <div class="flip-card-back">
-                    <img src="housing.jpg" alt="">
-                    <p>Modern apartments and dormitories</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Roommate Matching</h3>
-                    <p>Connect with compatible roommates</p>
-                </div>
-                <div class="flip-card-back">
-                    <img src="roommates.jpg" alt="">
-                    <p>Smart matching algorithm</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>University Network</h3>
-                    <p>All universities in Kosovo</p>
-                </div>
-                <div class="flip-card-back">
-                    <a href="colleges.html">
-                        <img src="Image3.jpg" alt="">
-                    </a>
-                    <p>All universities covered</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </main>
 
 <!-- ==================== FOOTER ==================== -->
@@ -162,21 +103,36 @@
 
 <!-- ==================== JAVASCRIPT ==================== -->
 <script>
-    /* ===== THEME TOGGLE ===== */
-    const themeToggle = document.getElementById("theme-toggle");
-    const body = document.body;
+   const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
 
-    themeToggle.addEventListener("change", () => {
-        body.classList.toggle("dark");
-        body.classList.toggle("light");
-        localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
-    });
+const savedTheme = localStorage.getItem("theme");
 
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        body.classList.add("dark");
+if (savedTheme === "dark") {
+    body.classList.add("dark");
+    body.classList.remove("light");
+    if (themeToggle) {
         themeToggle.checked = true;
     }
+} else {
+    body.classList.add("light");
+    body.classList.remove("dark");
+    if (themeToggle) {
+        themeToggle.checked = false;
+    }
+}
+
+themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+        body.classList.add("dark");
+        body.classList.remove("light");
+        localStorage.setItem("theme", "dark");
+    } else {
+        body.classList.add("light");
+        body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+    }
+});
 
     /* ===== MOBILE MENU ===== */
     const hamburger = document.getElementById("hamburger");
@@ -190,7 +146,8 @@
 const images = [
     "UBTT.jpg",
     "University of Mitrovica.jpg",
-    "UUP.jpeg"
+    "UUP.jpeg",
+    "Universum College.jpg"
 ];
 
 let index = 0;

@@ -18,6 +18,10 @@ body {
   min-height: 100vh;
   transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 body.light { 
@@ -209,6 +213,129 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(100%);
+}
+/*Hamburger Menu*/
+.hamburger {
+  display: none;
+  width: 46px;
+  height: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background-color: #2652c0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+body.dark .hamburger span {
+  background-color: #a3bffa;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: right 0.4s ease;
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+body.dark .mobile-menu {
+  background: #222222;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.mobile-menu-links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4a5568;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-links a:hover {
+  color: #667eea;
+}
+
+.mobile-menu .mobile-auth-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 15px;
+    
+    width: 100%;
+    height: auto;
+    
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.mobile-menu .mobile-auth-buttons button,
+.mobile-menu .mobile-auth-buttons a {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    text-decoration: none;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu .mobile-auth-buttons button{
+   background: linear-gradient(to right , #2652c0, #1ee9c0);
+   border-color: black;
 }
 
 /* ==================== 4. Profile ==================== */

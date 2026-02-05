@@ -44,11 +44,7 @@
 - ⚠️ Requirement states: "If only procedural, max score is 30 points"
 - ⚠️ Need to refactor PHP code to use OOP principles
 
-### 5. Slider/Carousel
-- ❌ No functional slider on index.php or about.html
-- ⚠️ Requirement: "Include a functional slider on one of the pages"
-
-### 6. Database Tables Needed
+### 5. Database Tables Needed
 - ❌ `news` table (id, title, content, image, author_id, created_at, updated_at)
 - ❌ `products` table (id, name, description, image, price, author_id, created_at, updated_at)
 - ❌ `contact_submissions` table (id, name, email, subject, message, created_at)

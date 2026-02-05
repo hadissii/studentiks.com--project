@@ -7,82 +7,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contact.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="light">
    <!-- ==================== NAVBAR ==================== -->
-        <nav class="nav-container">
-        <!-- Logo -->
-        <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
-        
-        <!-- Desktop Navigation Links -->
-        <nav class="nav-container">
-    <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
+         <nav class="nav-container">
+  <img src="LogoStudentiks_pabg.png" alt="Logo" class="logo">
 
-    <div class="nav-links">
-    <a href="index.html">
-        <i class="fa-solid fa-house"></i>
-        Ballina
-    </a>
+ 
+  
 
-    <a href="about.html">
-        <i class="fa-solid fa-circle-info"></i>
-        Rreth nesh
-    </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Ballina</a>
+    <a href="about.html"><i class="fa-solid fa-circle-info"></i> Rreth nesh</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Kontakti</a>
+    <a href="colleges.html"><i class="fa-solid fa-graduation-cap"></i> Fakultetet</a>
+  </div>
 
-    <a href="contact.html">
-        <i class="fa-solid fa-envelope"></i>
-        Kontakti
-    </a>
+  <div class="auth-buttons" id="auth-buttons">
+    <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
+    <a href="login.html"><button>Login</button></a>
+    <a href="register.html"><button>Register</button></a>
 
-    <a href="colleges.html">
-        <i class="fa-solid fa-graduation-cap"></i>
-        Fakultetet
-    </a>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+   <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-    
-</div>
-
-
-    <div class="auth-buttons">
-        <a href="dashboard.php"><i class="fa-solid fa-user"></i></a>
-        <a href="login.html"><button>Login</button></a>
-        <a href="register.html"><button>Register</button></a>
-
-        <label class="switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</nav>
-        
-        <!-- Desktop Auth Buttons -->
-        <div class="auth-buttons">
-            <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
-            <a href="login.html"><button id="loginBtn">Login</button></a>
-        <a href="register.html"><button id="register-btn">Register</button></a>
-            
-            <!-- Theme Toggle -->
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
-        
-        <!-- Hamburger Menu (Mobile Only) -->
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
             <a href="index.html">
@@ -109,10 +70,9 @@
              <a href="dashboard.php"><i class="fa-solid fa-user" id="fa-user"></i></a>
             <a href="login.html"><button id="loginBtn">Login</button></a>
         <a href="register.html"><button id="register-btn">Register</button></a>
-            <!-- Theme Toggle -->
-            <i id="switch" class="fa-solid fa-moon"></i>
         </div>
     </div>
+</nav>
     
   <section>
     <h1>Get in Touch</h1>
